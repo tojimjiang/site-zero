@@ -1,14 +1,20 @@
 html, body{
 	margin: 0;
 	font-family: "Raleway", "Arial", sans-serif;
-	/* background: black; */
 }
 
-/* CSS Position */
 nav{
 	z-index: 100;
 	position: fixed;
 	width: 100%;
+}
+
+#menufix {
+	display: flex;
+	position: relative;
+	z-index: 0;
+	overflow: hidden;
+	justify-content: flex-end;
 }
 
 /* Nav Bar CSS */
@@ -22,7 +28,7 @@ nav{
 	border-style: solid;
 }
 
-/* CSS Float */
+/* Align Left Elements */
 a.navLeft {
 	float: left;
 }
@@ -32,7 +38,7 @@ a.navLeft:link, a.navLeft:visited{
 	background-color: #000;
 	color: white;
 	font-weight: normal;
-	padding: 1% 1%;
+	padding: 1vw;
 }
 
 a.navLeft:hover, a.navLeft:active, a.navLeft:focus{
@@ -40,10 +46,10 @@ a.navLeft:hover, a.navLeft:active, a.navLeft:focus{
 	background-color: #fff;
 	color: black;
 	font-weight: lighter;
-	padding: 1% 1%;
+	padding: 1vw;
 }
 
-/* CSS Float */
+/* Align Right Elements */
 a.navRight {
 	float: right;
 }
@@ -52,7 +58,7 @@ a.navRight:link, a.navRight:visited{
 	background-color: #000;
 	color: white;
 	font-weight: normal;
-	padding: 1%;
+	padding: 1vw;
 }
 
 a.navRight:hover, a.navRight:active, a.navRight:focus{
@@ -60,111 +66,44 @@ a.navRight:hover, a.navRight:active, a.navRight:focus{
 	background-color: #fff;
 	color: black;
 	font-weight: lighter;
-	padding: 1%;
+	padding: 1vw;
 }
 
-/* Other CSS */
-div.fsimage {
-	width:100%;
-	height:66vh;
-	z-index: 1;
-	background-color: gray;
-	overflow: hidden;
-	object-position: center;
-	display: flex;
-}
-
-image.cropimage {
-	width:100%;
-	height:100%;
-	object-fit: cover;
-}
-
+/* Special Page Layout CSS via DIV */
 div.spacer {
 	width:100%;
-	height:5vh;
-	z-index: 1;
-	background-color: #000;
+	height: 2.5vh;
 	overflow: hidden;
 }
 
-/* CSS POSITION */
-div.overlay {
-	display: flex;
-	position: relative;
-	bottom: -20vh;
-	z-index: 0;
-	overflow: hidden;
-	justify-content: flex-end;
-	margin-bottom: -20vh;
-}
-
-p.overlaytext {
-	padding: 2%;
-	background: rgba(255, 255, 255, 0.5);
-	overflow: hidden;
-	text-align: right;
-	max-width: 50%;
-	min-width: 33%;
-	font-size: 2em;
-}
-
-p.imagetext{
-	color: white;
-}
-
-div.header {
+div.centerer, div.allcenterer{
 	display: flex;
 	justify-content: center;
-	background: rgba(0, 0, 0);
-	font-size: 3em;
-	color: white;
-	padding: 0.5em;
 }
 
-p.headertext {
-	margin: 0;
+div.contained{
+	padding-left: 10vw;
+	padding-right: 10vw;
 }
-div.lister {
-	background-color: white;
-	display: flex;
-	justify-content: center;
-	flex-wrap: wrap;
-}
-div.post{
-	width: 40vw;
-	margin: 2.5vw;
-}
-div.widepost{
-	width: 90vw;
-	margin: 2.5vw;
-}
-p.title{
-	text-align: center;
-	font-size: 2em;
-}
-p.subtitle{
-	text-align: center;
-	font-size: 1.5em;
-	color: gray;
-}
-p.content{
+
+.content{
 	text-align: center;
 }
-div.imgwrap{
-	max-height: 33vh;
-}
-img.postimg{
+
+img.navicon{
 	justify-content: center;
-	width:100%;
-	max-height:33vh;
-	object-fit: cover;
+	max-width: 10vh;
+	max-height: 10vh;
+	width: 1em;
+	height: 1em;
 }
-img.shortpostimg{
-	justify-content: center;
-	width:100%;
-	max-height:15vh;
-	object-fit: cover;
+
+img.rounded{
+	border-radius: 50%;
+}
+
+#navPad {
+	padding: 1%;
 }
 
 footer {
@@ -173,18 +112,6 @@ footer {
 	text-align: center;
 	padding: 1%;
 	margin-bottom: 0px;
-}
-
-/* Contact Link Styline */
-a.contactLink:link, a.contactLink:visited{
-	text-decoration: none;
-	color: #000;
-}
-
-a.contactLink:hover, a.contactLink:active, a.contactLink:focus{
-	text-decoration: none;
-	color: #222;
-	background-color: #f0f0f0;
 }
 
 /* Generic Link Styling */

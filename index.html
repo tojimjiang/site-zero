@@ -37,16 +37,46 @@
 	<header>
 		<nav>
 			<ul id = "navList">
-				<li class = "left"><a class="navLeft" href="index.html"><img class = "navicon" style = "" src = ""></a></li>
-				<li class = "left"><a class="navLeft" href="index.html">Jim Jiang</a></li>
-				<div id = "mobileNav">
-					<li class = "right"><a target="_blank" class="navRight" href="github.html">Go to My GitHub</a></li>
-					<li class = "right"><a target="_blank" class="navRight" href="media.html">Active Projects</a></li>
-					<li class = "right"><a class="navRight" href="about.html">Vault</a></li>
+				<div id = "mobileNavAll">
+					<li class = "left"><a class="navLeft" href="index.html"><img class = "navicon rounded" src = "headshot_mini.jpg"></a></li>
+					<li class = "left"><a class="navLeft" href="index.html">Jim Jiang</a></li>
+				
+					<div id = "mobileNav">
+						<li class = "right"><a target="_blank" class="navRight" href="github.html">Go to My GitHub</a></li>
+						<!-- Deactivate
+						<li class = "right"><a target="_blank" class="navRight" href="media.html">Active Projects</a></li>
+						-->
+						<li class = "right"><a class="navRight" href="about.html">Vault</a></li>
+					</div>
 				</div>
 			</ul>
 		</nav>
 	</header>
+
+	<!-- Menu Fix for a Fixed Nav -->
+	<!-- On load, grab the height of the menu(s), and apply a margin to menufix element -->
+	<div id = "menufix">
+	</div>
+
+	<!-- Add a spacer -->
+	<div class = "spacer">
+	</div>
+
+	<!-- Actual Content 1 -->
+	<div class = "contained">
+		<div class = "allcenterer">
+			<img class = "rounded" width="20%" height="20%" src = "headshot.jpg">
+		</div>
+		<div class = "content allcenterer">
+			<h1> Jim Jiang </h1>
+		</div>
+		<div class = "content">
+			<p> I'm an undergraduate studying Computer Science at the Courant Institute of Mathematical Sciences at New York University. My interests include data science, computer natworking, gaming, blockchain technology, parallel computing, and machine learning. </p>
+		</div>
+	</div>
+
+		<p class = "content"></p>
+	</div>
 
 </body>
 </html>
