@@ -102,6 +102,12 @@ img.rounded{
 	border-radius: 50%;
 }
 
+img.m40t30d20{
+	width: 30%;
+	height: 30%;
+}
+
+
 #navPad {
 	padding: 1%;
 }
@@ -124,3 +130,22 @@ a:hover, a:active, a:focus{
 	text-decoration: none;
 	color: #000;
 }
+
+.card {
+	flex: 1;
+	padding: 2vw;
+	margin: 1vw;
+	max-width: 45vw;
+	text-align: left;
+	background-color: cornsilk;
+}
+
+.card_flex{
+	display: flex;
+	width: 100%;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+/* Card Styling */

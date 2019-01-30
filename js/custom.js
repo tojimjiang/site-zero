@@ -12,4 +12,6 @@ $(document).ready(function(){
 
 	})
 
+	// Card Height Fix (via jQuery)
+
 });
