@@ -5,6 +5,7 @@
 -->
 
 <html>
+
 <head>
 	<title>Jim Jiang - GitHub Redirect</title>
 
@@ -16,47 +17,57 @@
 
 	<!-- ## CSS ## -->
 	<!-- Media query for narrow browser width -->
-	<link rel="stylesheet" media="only screen and (max-width: 480px)" href="css/mobile.css">
+	<link rel="stylesheet" media="only screen and (max-width: 480px)" href="assets/css/mobile.css">
 	<!-- Media query for medium browser width -->
-	<link rel="stylesheet" media="only screen and (min-width: 481px) and (max-width: 960px)" href="css/tablet.css">
+	<link rel="stylesheet" media="only screen and (min-width: 481px) and (max-width: 960px)"
+		href="assets/css/tablet.css">
 	<!-- Media query for full browser width -->
-	<link rel="stylesheet" media="only screen and (min-width: 961px)" href="css/desktop.css">
+	<link rel="stylesheet" media="only screen and (min-width: 961px)" href="assets/css/desktop.css">
 	<!-- Prevent smartphones from scaling pages down -->
 	<meta name="viewport" content="initial-scale=1">
 
 	<!-- ## JavaScript ## -->
 	<!-- JQuery -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-	<!-- VelocityJS -->
-	<script src="js/velocity.js"></script>
-	<script src="js/velocity.ui.js"></script>
 	<!-- Custom -->
-	<script src="js/custom.js"></script>
+	<script src="assets/js/custom.js"></script>
 
 	<!-- ## FONTS (from Google) ## -->
 	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 </head>
+
 <body>
 
 	<!-- List Style Navigation -->
 	<header>
 		<nav>
-			<ul id = "navList">
-				<li class = "left"><a class="navLeft" href="index.html"><img class = "navicon" src = "headshot_mini.jpg"></a></li>
-				<li class = "left"><a class="navLeft" href="index.html">Jim Jiang</a></li>
-				<div id = "mobileNav">
-					<li class = "right"><a target="_blank" class="navRight" href="github.html">Go to My GitHub</a></li>
-					<li class = "right"><a target="_blank" class="navRight" href="media.html">Active Projects</a></li>
-					<li class = "right"><a class="navRight" href="about.html">Vault</a></li>
+			<ul id="navList">
+				<div id="mobileNavAll">
+					<li class="left"><a class="navLeft" href="index.html"><img class="navicon rounded"
+								src="assets/img/headshot_mini.jpg"></a></li>
+					<li class="left"><a class="navLeft" href="index.html">Jim Jiang</a></li>
+
+					<div id="mobileNav">
+						<li class="right"><a target="_blank" class="navRight" href="github.html">Go to My GitHub</a>
+						</li>
+						<!-- Deactivate
+							<li class = "right"><a target="_blank" class="navRight" href="media.html">Active Projects</a></li>
+							-->
+						<!--- Deactivate
+							<li class = "right"><a class="navRight" href="filter.html">Filtered</a></li>
+							-->
+					</div>
 				</div>
 			</ul>
 		</nav>
 	</header>
 
-	<div id = "menufix">
+
+	<div id="menufix">
 	</div>
 
 	<p> Oops! That wasn't supposed to happen! </p>
 	<a href="https://github.com/tojimjiang"> Click here to go to GitHub </a>
 </body>
+
 </html>

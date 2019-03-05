@@ -12,22 +12,19 @@
 
 	<!-- ## CSS ## -->
 	<!-- Media query for narrow browser width -->
-	<link rel="stylesheet" media="only screen and (max-width: 480px)" href="css/mobile.css">
+	<link rel="stylesheet" media="only screen and (max-width: 480px)" href="assets/css/mobile.css">
 	<!-- Media query for medium browser width -->
-	<link rel="stylesheet" media="only screen and (min-width: 481px) and (max-width: 960px)" href="css/tablet.css">
+	<link rel="stylesheet" media="only screen and (min-width: 481px) and (max-width: 960px)" href="assets/css/tablet.css">
 	<!-- Media query for full browser width -->
-	<link rel="stylesheet" media="only screen and (min-width: 961px)" href="css/desktop.css">
+	<link rel="stylesheet" media="only screen and (min-width: 961px)" href="assets/css/desktop.css">
 	<!-- Prevent smartphones from scaling pages down -->
 	<meta name="viewport" content="initial-scale=1">
 
 	<!-- ## JavaScript ## -->
 	<!-- JQuery -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-	<!-- VelocityJS -->
-	<script src="js/velocity.js"></script>
-	<script src="js/velocity.ui.js"></script>
 	<!-- Custom -->
-	<script src="js/custom.js"></script>
+	<script src="assets/js/custom.js"></script>
 
 	<!-- ## FONTS (from Google) ## -->
 	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
@@ -38,7 +35,7 @@
 		<nav>
 			<ul id = "navList">
 				<div id = "mobileNavAll">
-					<li class = "left"><a class="navLeft" href="index.html"><img class = "navicon rounded" src = "headshot_mini.jpg"></a></li>
+					<li class = "left"><a class="navLeft" href="index.html"><img class = "navicon rounded" src = "assets/img/headshot_mini.jpg"></a></li>
 					<li class = "left"><a class="navLeft" href="index.html">Jim Jiang</a></li>
 				
 					<div id = "mobileNav">
@@ -46,7 +43,9 @@
 						<!-- Deactivate
 						<li class = "right"><a target="_blank" class="navRight" href="media.html">Active Projects</a></li>
 						-->
+						<!--- Deactivate
 						<li class = "right"><a class="navRight" href="filter.html">Filtered</a></li>
+						-->
 					</div>
 				</div>
 			</ul>
@@ -65,7 +64,8 @@
 	<!-- Actual Content 1 -->
 	<div class = "contained">
 		<div class = "allcenterer">
-			<img class = "rounded m40t30d20" src = "headshot.jpg">
+			<!--Image is not loaded-->
+			<!---<img class = "rounded m40t30d20" src = "headshot.jpg"> -->
 		</div>
 		<div class = "content allcenterer">
 			<h1> Jim Jiang </h1>
@@ -74,36 +74,17 @@
 			<p> I'm an undergraduate studying Computer Science at the Courant Institute of Mathematical Sciences at New York University. My interests include data science, computer natworking, gaming, blockchain technology, parallel computing, and machine learning. </p>
 		</div>
 	</div>
-	<div class = "content">
-		<div class = "card_flex">
-			<div class = "card">
-				<h2>Current Interests</h2>
-				<p>
-					<ul>
-						<li>Tinkering with electronics to make new tools and toys</li>
-						<li>Optimize hardware equipment spend</li>
-						<li>Create openly accessible datafeeds to allow everyone to participate in big data</li>
-						<li>Developing <emphasis>modern</emphasis> infinity helpful web applications, providing easily accessible datapoints from a deluge of information</li>
-						<li>Automating my work</li>
-					</ul>
-				</p>
-			</div>
-			<div class = "card">
-				<h2>HMU if you want to</h2>
-				<p>
-					<ul>
-						<li>Go shopping</li>
-						<li>Go shopping</li>
-						<li>Get a new and fresh perspective</li>
-						<li>Do some talking in HTML, Python, Java, CSS, JS, C, and Swift</li>
-						<li>Complain about <emphasis>something</emphasis> wrong with the MTA</li>
-						<li>Want the above in regular english</li>
-						<li>Or, you just want some technical expertise</li>
-					</ul>
-				</p>
-			</div>
+	<div class = "contained">
+		<div class = "content allcenterer" id ="liveProjects">
+			<h1>See Some Live Projects!</h1>
 		</div>
-		
+		<div class = "content">
+			<a class="project" href="dice/index.html">Fully Clientside Dice Roller Game</a>
+			<a class="project" href="canvas/index.html">Fully Clientside Color Mini-Canvas</a>
+			<a class="project" href="rando/index.html">Fully Clientside Semi-Random Page Generation</a>
+		</div>
+	</div>
+	<div class = "content">
 	</div>
 
 </body>

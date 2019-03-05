@@ -1,0 +1,229 @@
+html, body{
+	margin: 0;
+	font-family: "Raleway", "Arial", sans-serif;
+}
+
+nav{
+	z-index: 100;
+	position: fixed;
+	width: 100%;
+}
+
+#menufix {
+	display: flex;
+	position: relative;
+	z-index: 0;
+	overflow: hidden;
+	justify-content: flex-end;
+}
+
+/* Nav Bar CSS */
+#navList {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: black;
+}
+
+/* Special Nav Bar Case (Cut off "right" 3 nav together)*/
+#mobileNav {
+	width: 100vw;
+	float: left;
+	background-color: #aaa;
+}
+
+/* Align Left Elements */
+a.navLeft {
+	float: left;
+}
+
+a.navLeft:link, a.navLeft:visited{
+	text-decoration: none;
+	background-color: #000;
+	color: white;
+	font-weight: normal;
+	padding: 1% 3%;
+}
+
+a.navLeft:hover, a.navLeft:active, a.navLeft:focus{
+	text-decoration: none;
+	background-color: #fff;
+	color: black;
+	font-weight: lighter;
+	padding: 1% 3%;
+}
+
+/* Desktop/Tablet Align right, MOBILE ALIGN LEFT */
+a.navRight {
+	/* MOBILE NAV SPECIAL */
+	float: left;
+}
+
+a.navRight:link, a.navRight:visited{
+	text-decoration: none;
+	background-color: #aaa;
+	color: white;
+	font-weight: normal;
+	padding: 1% 3%;
+}
+
+a.navRight:hover, a.navRight:active, a.navRight:focus{
+	text-decoration: none;
+	background-color: #fff;
+	color: black;
+	font-weight: lighter;
+	padding: 1% 3%;
+}
+
+/* Special Page Layout CSS via DIV */
+div.spacer {
+	width:100%;
+	height: 2.5vh;
+	overflow: hidden;
+}
+
+
+footer {
+	background-color: black;
+	color: white;
+	text-align: left;
+	padding: 1%;
+	margin-bottom: 0px;
+}
+
+
+.footer {
+	padding: 1vw;
+	overflow: hidden;
+	background-color: black;
+	border-width: 0px;
+	border-style: solid;
+	color: white;
+	text-align: right;
+}
+
+.mobi-lr-pad {
+	padding: 0 2vw;
+}
+
+#footerFix {
+	width:100%;
+	overflow: hidden;
+}
+
+.flex-wrap {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	flex-direction: column;
+	margin: 0;
+}
+
+#titleDiv {
+	text-align: center;
+	width: 100%;
+}
+
+#wallet {
+	color: white;
+	background: darkgreen;
+	border-radius: 25px;
+	width: 90vw;
+	text-align: center;
+	margin: 1vw 1vh;
+}
+
+#bet {
+	text-align: center;
+	color: white;
+	background: darkblue;
+	border-radius: 25px;
+	width: 90vw;
+	margin: 1vw 1vh;
+}
+
+#buttons {
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	flex-direction: row;
+	background: lightgray;
+	max-width: 86vw;
+	padding: 2vw;
+	border-radius: 25px;
+}
+
+
+.newLine {
+	width: 100%;
+	text-align: center;
+}
+
+/* Button Styling */
+.betStyle1 {
+	font-size: 1em;
+	background: darkcyan;
+	margin: 0.5vh 0.5vw; 
+	width: 90vw;
+	height: 5vh;
+	border-radius: 25px;
+	border: none;
+	color: white;
+}
+
+.betStyle2 {
+	font-size: 1em;
+	background: darkgoldenrod;
+	margin: 0.5vh 0.5vw; 
+	width: 27vw;
+	height: 5vh;
+	border-radius: 25px;
+	border: none;
+	color: white;
+}
+
+.betStyle3 {
+	font-size: 1em;
+	background: lightgray;
+	margin: 0.5vh 0.5vw; 
+	width: 90vw;
+	height: 5vh;
+	border-radius: 25px;
+	border: none;
+	color: black;
+}
+
+
+#dice {
+	margin: 1vw 1vh;
+}
+
+#end {
+	text-align: center;
+	color: white;
+	background: red;
+	border-radius: 25px;
+	width: 90vw;
+	margin: 1vw 1vh;
+}
+
+#history {
+	text-align: center;
+	width: 100%;
+}
+
+#historyText {
+	display: none;
+}
+
+/* Generic Link Styling */
+a:link, a:visited{
+	text-decoration: none;
+	color: #fff;
+}
+
+a:hover, a:active, a:focus{
+	text-decoration: none;
+	color: #fff;
+}

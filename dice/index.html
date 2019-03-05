@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Jim Jiang - Guess The Number!</title>
+
+	<!-- Load Dependencies (CSS, Scripts and Fonts) -->
+
+	<!-- Google Font -->
+	<link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet"> 
+
+	<!-- CSS Style Sheet -->
+	<!-- Media query for narrow browser width -->
+	<link rel="stylesheet" media="only screen and (max-width: 660px)" href="css/mobile.css">
+	<!-- Media query for full browser width -->
+	<link rel="stylesheet" media="only screen and (min-width: 661px)" href="css/style.css">
+	<!-- Prevent smartphones from scaling pages down -->
+	<meta name="viewport" content="initial-scale=1">
+
+	<!-- JavaScript -->
+	<script src="js/custom.js"></script>
+
+	<!-- Char Set (for Emoji) -->
+	<meta charset="UTF-8">
+</head>
+<body>
+
+	<!-- List Style Navigation -->
+	<header>
+		<nav>
+			<ul id = "navList">
+				<div id = "mobileNavAll">
+					<li class = "left"><a class="navLeft" href="index.html">Jim Jiang - Guess The Number!</a></li>
+
+					<div id = "mobileNav">
+						<li class = "right"><a class="navRight" href="https://url.jimjiang.com/jimjiang-home.html">jimjiang.com</a></li>
+						<li class = "right"><a class="navRight" href="../index.html">Home</a></li>
+					</div>
+				</div>
+			</ul>
+		</nav>
+	</header>
+
+	<!-- Menu Fix for a Fixed Nav -->
+	<!-- On load, grab the height of the menu(s), and apply a margin to menufix element -->
+	<div id = "menufix">
+	</div>
+
+	<div class = "flex-wrap">
+		<div id = "titleDiv">
+			<h1 id = "title"><span id = "titleSpan">JavaScript is disabled 😞</span></h1>
+			<p id = "dir"><span id = "dirSpan">Please enable JavaScript so this site will work.</span></p>
+		</div>
+		<div id = "wallet">
+			<p> Your bank: $<span id = "value"></span></p>
+		</div>
+		<div id = "game">
+			<img id = "dice" src = "assets/dice-unknown.png">
+		</div>
+		<div id = "bet">
+			<p> You chose <span id = "choice"></span>. <span id = "result"></span></p>
+		</div>
+		<div id = "buttons">
+			<h3 class = "newLine">What is your GUESS?</h3>
+			<p class = "newLine">Basic Guesses</p>
+			<button type = "button" id = "odd" class = "betStyle1"> Guess Odd </button>
+			<button type = "button" id = "even" class = "betStyle1"> Guess Even </button>
+			<p class = "newLine">Targeted Guesses</p>
+			<button type = "button" id = "1" class = "betStyle2"> Guess 1 </button>
+			<button type = "button" id = "2" class = "betStyle2"> Guess 2 </button>
+			<button type = "button" id = "3" class = "betStyle2"> Guess 3 </button>
+			<button type = "button" id = "4" class = "betStyle2"> Guess 4 </button>
+			<button type = "button" id = "5" class = "betStyle2"> Guess 5 </button>
+			<button type = "button" id = "6" class = "betStyle2"> Guess 6 </button>
+		</div>
+		<div id = "playAgain">
+			<button type = "button" id = "play" class = "betStyle3">GUESS AGAIN</button>
+		</div>
+		<div id = "end">
+			<p>You ran out of money! GAME OVER! Reload to play again.</p>
+		</div>
+		<div id = "history">
+			<h3>👇Click to See Game History 📜</h3>
+			<p><span id = "historyText">You haven't played yet!</span></p>
+		</div>
+	</div>
+
+	<!-- Make footer -->
+	<div id = "footerFix">
+	</div>
+	<div class = "spacer">
+	</div>
+	<div class = "footer">
+		<p class = "mobi-lr-pad">© 2019 Jim Jiang</p>
+		<p class = "mobi-lr-pad"><a href = "index.html">Normal Version</a> - <a href = "evil.html">Evil Version</a></p>
+	</div>
+
+</body>
+</html>

@@ -152,4 +152,22 @@ a:hover, a:active, a:focus{
 	width: 100%;
 	flex-direction: column;
 }
-/* Card Styling */
+
+/* Project Link Button Styling */
+a.project:link, a.project:visited{
+	text-decoration: none;
+	color: #000;
+	background-color: #ddd;
+	padding: 1vw;
+	display:block;
+	margin: 1vw;
+}
+
+a.project:hover, a.project:active, a.project:focus{
+	text-decoration: none;
+	color: #fff;
+	background-color: #000;
+	padding: 1vw;
+	display:block;
+	margin: 1vw;
+}
