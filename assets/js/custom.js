@@ -1,17 +1,14 @@
-$(document).ready(function(){
+// Responsive Menu Loading
+function menuReload() {
+	let navListElt = document.getElementById('navList');
+	let menu_offset = "margin-bottom: " + navListElt.offsetHeight + "px";
+	let menuFixElt = document.getElementById('menufix');
+	menuFixElt.setAttribute("style", menu_offset);
+}
 
-	// On load menufix
-	var menuSize = String($("#navList").height()).concat("px");
-	$("#menufix").css("margin-bottom", menuSize);
+window.onload = function () {
+	menuReload();
 
-
-	// On Resize menufix
-	$(window).resize( function() {
-		var menuSize = String($("#navList").height()).concat("px");
-		$("#menufix").css("margin-bottom", menuSize);
-
-	})
-
-	// Card Height Fix (via jQuery)
-
-});
+	// Window Listener
+	window.addEventListener('resize', menuReload);
+}
