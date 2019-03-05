@@ -119,15 +119,13 @@ function loadAll() {
 	loadCellsClick();
 	loadClear();
 	loadCustom();
+
 }
 
 window.onload = function () {
 	dirJS();
 	selectShow("black");
 	loadAll();
-
-	// Color Variable Storage
-	let color = "black";
 
 	// Add Color button Clicks
 	let buttonElements = document.querySelectorAll('.colorButton');
@@ -137,6 +135,5 @@ window.onload = function () {
 	window.addEventListener('resize', menuReload);
 }
 
-
-
-
+// Color Variable Storage
+let color = "black";
