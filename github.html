@@ -19,10 +19,11 @@
 	<!-- Media query for narrow browser width -->
 	<link rel="stylesheet" media="only screen and (max-width: 480px)" href="assets/css/mobile.css">
 	<!-- Media query for medium browser width -->
-	<link rel="stylesheet" media="only screen and (min-width: 481px) and (max-width: 960px)"
-		href="assets/css/tablet.css">
+	<link rel="stylesheet" media="only screen and (min-width: 481px) and (max-width: 960px)" href="assets/css/tablet.css">
 	<!-- Media query for full browser width -->
 	<link rel="stylesheet" media="only screen and (min-width: 961px)" href="assets/css/desktop.css">
+	<!-- Print Beautifully -->
+	<link rel = "stylesheet" media="print" href="assets/css/desktop.css">
 	<!-- Prevent smartphones from scaling pages down -->
 	<meta name="viewport" content="initial-scale=1">
 
@@ -40,16 +41,16 @@
 
 	<!-- List Style Navigation -->
 	<header>
-		<nav>
-			<ul id="navList">
-				<div id="mobileNavAll">
-					<li class="left"><a class="navLeft" href="index.html"><img class="navicon rounded"
-								src="assets/img/headshot_mini.jpg"></a></li>
-					<li class="left"><a class="navLeft" href="index.html">Jim Jiang</a></li>
-
-					<div id="mobileNav">
-						<li class="right"><a target="_blank" class="navRight" href="github.html">Go to My GitHub</a>
-						</li>
+			<nav>
+				<ul id="navList">
+					<div id="navLeftFlex">
+						<li class="left"><a class="navLeft" href="index.html"><img class="navicon rounded" src="assets/img/headshot_mini.jpg"></a></li>
+						<li class="left"><a class="navLeft" href="index.html">Jim Jiang</a></li>
+	
+					</div>
+					<div id="navRightFlex">
+						<li class="right"><a target="_blank" class="navRight" href="github.html">GitHub</a></li>
+						<li class="right"><a target="_blank" class="navRight" href="resume.html">Resume</a></li>
 						<!-- Deactivate
 							<li class = "right"><a target="_blank" class="navRight" href="media.html">Active Projects</a></li>
 							-->
@@ -57,9 +58,8 @@
 							<li class = "right"><a class="navRight" href="filter.html">Filtered</a></li>
 							-->
 					</div>
-				</div>
-			</ul>
-		</nav>
+				</ul>
+			</nav>
 	</header>
 
 

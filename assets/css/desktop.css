@@ -174,3 +174,35 @@ a.project:hover, a.project:active, a.project:focus{
 	display:block;
 	margin: 1vw;
 }
+
+@media print {
+	a.navLeft:link, a.navLeft:visited{
+		text-decoration: none;
+		color: black;
+		font-weight: normal;
+		padding: 1vw;
+		margin: 1vw;
+	}
+
+	a.navRight:link, a.navRight:visited{
+		text-decoration: none;
+		color: black;
+		font-weight: normal;
+		padding: 1vw;
+		border: 1px solid black;
+		border-radius: 2vw;
+		margin: 1vw;
+	}
+
+	a.project:link, a.project:visited{
+		text-decoration: none;
+		color: #000;
+		padding: 1vw;
+		display:block;
+		margin: 1vw;
+		border: 1px solid black;
+	}
+
+	
+	
+}
