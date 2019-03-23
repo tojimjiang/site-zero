@@ -24,13 +24,24 @@ nav{
 	padding: 0;
 	overflow: hidden;
 	background-color: black;
-	border-width: 1px;
-	border-style: solid;
+	border: none;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
 }
 
-/* Align Left Elements */
-a.navLeft {
-	float: left;
+#navLeftFlex {
+	display: flex;
+	justify-content: flex-start;
+}
+
+#navRightFlex {
+	display: flex;
+	justify-content: flex-end;
+}
+
+li.left, li.right {
+	display: flex;
 }
 
 a.navLeft:link, a.navLeft:visited{
@@ -49,10 +60,6 @@ a.navLeft:hover, a.navLeft:active, a.navLeft:focus{
 	padding: 1vw;
 }
 
-/* Align Right Elements */
-a.navRight {
-	float: right;
-}
 a.navRight:link, a.navRight:visited{
 	text-decoration: none;
 	background-color: #000;

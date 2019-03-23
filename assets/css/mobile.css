@@ -24,18 +24,26 @@ nav{
 	padding: 0;
 	overflow: hidden;
 	background-color: black;
+	border: none;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	flex-wrap: wrap-reverse;
 }
 
-/* Special Nav Bar Case (Cut off "right" 3 nav together)*/
-#mobileNav {
-	width: 100vw;
-	float: left;
-	background-color: #aaa;
+#navLeftFlex {
+	display: flex;
+	justify-content: flex-start;
 }
 
-/* Align Left Elements */
-a.navLeft {
-	float: left;
+#navRightFlex {
+	display: flex;
+	justify-content: flex-end;
+	flex-grow: 1;
+}
+
+li.left, li.right {
+	display: flex;
 }
 
 a.navLeft:link, a.navLeft:visited{
@@ -43,7 +51,7 @@ a.navLeft:link, a.navLeft:visited{
 	background-color: #000;
 	color: white;
 	font-weight: normal;
-	padding: 3%;
+	padding: 3vw;
 }
 
 a.navLeft:hover, a.navLeft:active, a.navLeft:focus{
@@ -51,21 +59,15 @@ a.navLeft:hover, a.navLeft:active, a.navLeft:focus{
 	background-color: #fff;
 	color: black;
 	font-weight: lighter;
-	padding: 3%;
-}
-
-/* Desktop/Tablet Align right, MOBILE ALIGN LEFT */
-a.navRight {
-	/* MOBILE NAV SPECIAL */
-	float: left;
+	padding: 3vw;
 }
 
 a.navRight:link, a.navRight:visited{
 	text-decoration: none;
-	background-color: #aaa;
+	background-color: #000;
 	color: white;
 	font-weight: normal;
-	padding: 3%;
+	padding: 3vw;
 }
 
 a.navRight:hover, a.navRight:active, a.navRight:focus{
@@ -73,7 +75,7 @@ a.navRight:hover, a.navRight:active, a.navRight:focus{
 	background-color: #fff;
 	color: black;
 	font-weight: lighter;
-	padding: 3%;
+	padding: 3vw;
 }
 
 /* Special Page Layout CSS via DIV */
