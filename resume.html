@@ -1,18 +1,14 @@
 <!DOCTYPE html>
 
 <!-- COMMENTS
-	Rel 0.01
+	Rel 0.02
 -->
 
 <html>
 
 <head>
-	<title>Jim Jiang - GitHub Redirect</title>
+	<title>Jim Jiang - Home</title>
 
-	<!-- Actual Redirect -->
-	<meta http-equiv="refresh" content="0; url=https://github.com/tojimjiang" />
-
-	<!-- Then load in other elements to make a pretty page should redirect fail -->
 	<!-- Load Dependencies (CSS, Scripts and Fonts) -->
 
 	<!-- ## CSS ## -->
@@ -26,51 +22,61 @@
 	<!-- Print and Speak Beautifully -->
 	<link rel="stylesheet" media="print" href="assets/css/desktop.css">
 	<link rel="stylesheet" media="speech" href="assets/css/desktop.css">
+	<!-- Special Resume Only Style Sheet-->
+	<link rel="stylesheet" href="assets/css/resume.css">
 	<!-- Prevent smartphones from scaling pages down -->
 	<meta name="viewport" content="initial-scale=1">
 
 	<!-- ## JavaScript ## -->
-	<!-- JQuery -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 	<!-- Custom -->
 	<script src="assets/js/custom.js"></script>
 
 	<!-- ## FONTS (from Google) ## -->
-	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Poppins|Raleway" rel="stylesheet">
 </head>
 
 <body>
-
-	<!-- Flex Box Based Navigation -->
+	<!-- List Style Navigation -->
 	<header>
 		<nav>
 			<div id="navList">
 				<div id="navLeftFlex">
 					<a class="navLeft" href="index.html"><img class="navicon rounded"
-							src="assets/img/headshot_mini.jpg"></a>
-					<a class="navLeft" href="index.html">Jim Jiang</a>
+								src="assets/img/headshot_mini.jpg"></a></li>
+					<a class="navLeft" href="index.html">Jim Jiang</a></li>
 
 				</div>
 				<div id="navRightFlex">
-					<a target="_blank" class="navRight" href="github.html">GitHub</a>
-					<a target="_blank" class="navRight" href="resume.html">Resume</a>
+					<a target="_blank" class="navRight" href="github.html">GitHub</a></li>
+					<a target="_blank" class="navRight" href="resume.html">Resume</a></li>
 					<!-- Deactivate
-							<li class = "right"><a target="_blank" class="navRight" href="media.html">Active Projects</a></li>
-							-->
+						<li class = "right"><a target="_blank" class="navRight" href="media.html">Active Projects</a></li>
+						-->
 					<!--- Deactivate
-							<li class = "right"><a class="navRight" href="filter.html">Filtered</a></li>
-							-->
+						<li class = "right"><a class="navRight" href="filter.html">Filtered</a></li>
+						-->
 				</div>
-				</ul>
+			</ul>
 		</nav>
 	</header>
 
-
+	<!-- Menu Fix for a Fixed Nav -->
+	<!-- On load, grab the height of the menu(s), and apply a margin to menufix element -->
 	<div id="menufix">
 	</div>
 
-	<p> Oops! That wasn't supposed to happen! </p>
-	<a href="https://github.com/tojimjiang"> Click here to go to GitHub </a>
+	<!-- Actual Content 1 -->
+	<div class="contained resume">
+		<div class="allcenterer">
+		</div>
+		<div class="content allcenterer">
+			<h1> Current Resume </h1>
+		</div>
+		<div class="content allcenterer">
+			<a target="_blank" class="project" href="assets/files/resume.pdf">Download Resume (214KB)</a>
+		</div>
+	</div>
+
 </body>
 
 </html>

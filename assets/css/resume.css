@@ -1,0 +1,10 @@
+.resume {
+	margin: 0;
+	font-family: "Poppins", "Arial", sans-serif;
+}
+
+@media print {
+	nav {
+		display: none;
+	}
+}
