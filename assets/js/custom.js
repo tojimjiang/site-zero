@@ -1,3 +1,10 @@
+// Push to HTTPS (if not already)
+function secure() {
+	if (location.protocol != 'https:') {
+		location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+	}
+}
+
 // Responsive Menu Loading
 function menuReload() {
 	let navListElt = document.getElementById('navList');
@@ -7,6 +14,7 @@ function menuReload() {
 }
 
 window.onload = function () {
+	secure();
 	menuReload();
 
 	// Window Listener
