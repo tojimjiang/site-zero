@@ -15,6 +15,19 @@ function load(object) {
 	document.getElementById('info-div').appendChild(email);
 }
 
+function insertCaptcha(div){
+	let inner = document.createElement('div');
+	inner.classList = 'g-recaptcha';
+	grecaptcha.render('captcha-wrap', {
+		sitekey: '6LeDeqUUAAAAAAwfbFwmpWYydTJbUCKLQP138vY-',
+		callback: 'verify2'
+	});
+}
+
+function timedRefresh() {
+	setTimeout( function() {window.location.reload()}, 3000);
+}
+
 async function verify2(token) {
 	// v2 Captcha call
 	try {
@@ -22,16 +35,17 @@ async function verify2(token) {
 		{method: 'post', body: JSON.stringify({token: token, type: 2})});
 		if (response.status === 200) {
 			let object = await response.json();
+			document.querySelector('#captcha-wrap').style.display = 'none';
 			load(object);
 		}
 		else {
 			// Complete Failure, reload?
-			setTimeout(Location.reload(), 1500);
+			timedRefresh()
 		}
 	}
 	catch (e) {
 		// Complete Failure, reload?
-		setTimeout(Location.reload(), 1500);
+		timedRefresh()
 	}
 }
 
@@ -48,11 +62,11 @@ async function verify3() {
 				}
 				// v3 Fail, Show v2 Test
 				else {
-					document.querySelector('.hidden').style.display = 'block';
+					insertCaptcha(document.querySelector('#captcha-wrap'));
 				}
 			}
 			catch (e) {
-				document.querySelector('.hidden').style.display = 'block';
+				insertCaptcha(document.querySelector('#captcha-wrap'));
 			}
 		});
 	});

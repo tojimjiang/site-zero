@@ -7,7 +7,7 @@
 <html>
 
 <head>
-	<title>Jim Jiang - Home</title>
+	<title>Jim Jiang - Contact</title>
 
 	<meta name="format-detection" content="telephone=no">
 
@@ -31,18 +31,7 @@
 	<script src="https://www.google.com/recaptcha/api.js?render=6Ld7eqUUAAAAAOxWpaaN_jRYlaLU_X3Ho0N1nH81"></script>
 
 	<!-- Google Captcha v2 (as backup if score on load was too low) Loading -->
-	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
-
-	<style>
-		.diff {
-			font-size: 0em;
-		}
-
-		.hidden {
-			display: none;
-		}
-	</style>
+	<script src="https://www.google.com/recaptcha/api.js?render=explicit" async defer></script>
 
 	<!-- ## JavaScript ## -->
 	<!-- Custom -->
@@ -89,9 +78,7 @@
 			<div>
 				<!-- Captcha Auth Happens on the Server -->
 				<div class="allcenterer">
-					<div class="hidden captcha">
-						<div class="g-recaptcha" data-sitekey="6LeDeqUUAAAAAAwfbFwmpWYydTJbUCKLQP138vY-"
-							data-callback="verify2"></div>
+					<div id="captcha-wrap" class="captcha">
 					</div>
 				</div>
 				<div id="info-div" class="content">
