@@ -1,6 +1,4 @@
 function load(object) {
-	console.log(object);
-	console.log(document.getElementById('info-div'));
 	// Phone
 	let phone = document.createElement('a');
 	phone.textContent=`Call me at ${object.phone}`;
