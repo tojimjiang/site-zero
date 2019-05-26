@@ -20,7 +20,7 @@ async function verify2(token) {
 	try {
 		let response = await fetch('https://captchapi-hi.jimjiang.com',
 		{method: 'post', body: JSON.stringify({token: token, type: 2})});
-		if (response) {
+		if (response.status === 200) {
 			let object = await response.json();
 			load(object);
 		}
@@ -42,7 +42,7 @@ async function verify3() {
 			try {
 				let response = await fetch('https://captchapi-hi.jimjiang.com',
 				{method: 'post', body: JSON.stringify({token: token, type: 3})});
-				if (response) {
+				if (response.status === 200) {
 					let object = await response.json();
 					load(object);
 				}
