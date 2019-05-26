@@ -44,12 +44,13 @@ li.left, li.right {
 	display: flex;
 }
 
-a.navLeft:link, a.navLeft:visited{
+a.navLeft, a.navLeft:link, a.navLeft:visited{
 	text-decoration: none;
 	background-color: #000;
 	color: white;
 	font-weight: normal;
 	padding: 1vw;
+	transition-duration: 0.5s;
 }
 
 a.navLeft:hover, a.navLeft:active, a.navLeft:focus{
@@ -60,12 +61,13 @@ a.navLeft:hover, a.navLeft:active, a.navLeft:focus{
 	padding: 1vw;
 }
 
-a.navRight:link, a.navRight:visited{
+a.navRight, a.navRight:link, a.navRight:visited{
 	text-decoration: none;
 	background-color: #000;
 	color: white;
 	font-weight: normal;
 	padding: 1vw;
+	transition-duration: 0.5s;
 }
 
 a.navRight:hover, a.navRight:active, a.navRight:focus{
@@ -127,9 +129,10 @@ footer {
 }
 
 /* Generic Link Styling */
-a:link, a:visited{
+a, a:link, a:visited{
 	text-decoration: none;
 	color: #888;
+	transition-duration: 0.5s;
 }
 
 a:hover, a:active, a:focus{
@@ -157,13 +160,14 @@ a:hover, a:active, a:focus{
 
 
 /* Project Link Button Styling */
-a.project:link, a.project:visited{
+a.project, a.project:link, a.project:visited{
 	text-decoration: none;
 	color: #000;
 	background-color: #ddd;
 	padding: 1vw;
 	display:block;
 	margin: 1vw;
+	transition-duration: 0.5s;
 }
 
 a.project:hover, a.project:active, a.project:focus{

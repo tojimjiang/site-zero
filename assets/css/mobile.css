@@ -46,7 +46,7 @@ li.left, li.right {
 	display: flex;
 }
 
-a.navLeft:link, a.navLeft:visited{
+a.navLeft, a.navLeft:link, a.navLeft:visited{
 	text-decoration: none;
 	background-color: #000;
 	color: white;
@@ -62,7 +62,7 @@ a.navLeft:hover, a.navLeft:active, a.navLeft:focus{
 	padding: 3vw;
 }
 
-a.navRight:link, a.navRight:visited{
+a.navRight, .navRight:link, a.navRight:visited{
 	text-decoration: none;
 	background-color: #000;
 	color: white;

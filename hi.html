@@ -9,13 +9,16 @@
 <head>
 	<title>Jim Jiang - Home</title>
 
+	<meta name="format-detection" content="telephone=no">
+
 	<!-- Load Dependencies (CSS, Scripts and Fonts) -->
 
 	<!-- ## CSS ## -->
 	<!-- Media query for narrow browser width -->
 	<link rel="stylesheet" media="only screen and (max-width: 480px)" href="assets/css/mobile.css">
 	<!-- Media query for medium browser width -->
-	<link rel="stylesheet" media="only screen and (min-width: 481px) and (max-width: 960px)" href="assets/css/tablet.css">
+	<link rel="stylesheet" media="only screen and (min-width: 481px) and (max-width: 960px)"
+		href="assets/css/tablet.css">
 	<!-- Media query for full browser width -->
 	<link rel="stylesheet" media="only screen and (min-width: 961px)" href="assets/css/desktop.css">
 	<!-- Print and Speak Beautifully -->
@@ -24,15 +27,27 @@
 	<!-- Prevent smartphones from scaling pages down -->
 	<meta name="viewport" content="initial-scale=1">
 
+	<!-- Google Captcah v3 Loading -->
+	<script src="https://www.google.com/recaptcha/api.js?render=6Ld7eqUUAAAAAOxWpaaN_jRYlaLU_X3Ho0N1nH81"></script>
+
+	<!-- Google Captcha v2 (as backup if score on load was too low) Loading -->
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+
 	<style>
 		.diff {
 			font-size: 0em;
+		}
+
+		.hidden {
+			display: none;
 		}
 	</style>
 
 	<!-- ## JavaScript ## -->
 	<!-- Custom -->
 	<script src="assets/js/custom.js"></script>
+	<script src="assets/js/hi.js"></script>
 
 	<!-- ## FONTS (from Google) ## -->
 	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
@@ -44,21 +59,16 @@
 		<nav>
 			<div id="navList">
 				<div id="navLeftFlex">
-					<a class="navLeft" href="index.html"><img class="navicon rounded" src="assets/img/headshot_mini.jpg"></a>
+					<a class="navLeft" href="index.html"><img class="navicon rounded"
+							src="assets/img/headshot_mini.jpg"></a>
 					<a class="navLeft" href="index.html">Jim Jiang</a>
 
 				</div>
 				<div id="navRightFlex">
 					<a target="_blank" class="navRight" href="github.html">GitHub</a>
 					<a target="_blank" class="navRight" href="resume.html">Resume</a>
-					<!-- Deactivate
-						<li class = "right"><a target="_blank" class="navRight" href="media.html">Active Projects</a></li>
-						-->
-					<!--- Deactivate
-						<li class = "right"><a class="navRight" href="filter.html">Filtered</a></li>
-						-->
 				</div>
-			</ul>
+				</ul>
 		</nav>
 	</header>
 
@@ -75,25 +85,23 @@
 	<div class="contained">
 		<div class="content allcenterer" style="flex-direction: column">
 			<h1>Let's Talk.</h1>
-			<p><span>P</span><span>ho</span><span>ne:</span><span> </span><span>‍91</span><span>7‍-8</span><span class="diff">311</span><span>2</span><span>8‍-</span><span>2<span>7</span><span>32</span></p>
-			<p><span>Em</span><span>ail</span><span>: </span><span>jj‍</span><span>1‍</span><span>922‍</span><span class="diff">311</span><span>@</span><span>ny</span><span>u</span><span>‍.‍</span><span>e</span><span>du</span></p>
-			<br>
-			<a target="_blank" class="project" href="https://github.com/tojimjiang">See My GitHub</a>
-			<a target="_blank" class="project" href="https://www.linkedin.com/in/jim-jiang/">See My Linked In</a>
+			<!-- Check for Authority -->
+			<div>
+				<!-- Captcha Auth Happens on the Server -->
+				<div class="allcenterer">
+					<div class="hidden captcha">
+						<div class="g-recaptcha" data-sitekey="6LeDeqUUAAAAAAwfbFwmpWYydTJbUCKLQP138vY-"
+							data-callback="verify2"></div>
+					</div>
+				</div>
+				<div id="info-div" class="content">
+					<a target="_blank" class="project" href="https://github.com/tojimjiang">See My GitHub</a>
+					<a target="_blank" class="project" href="https://www.linkedin.com/in/jim-jiang/">See My Linked In</a>
+				</div>
+			</div>
+
 		</div>
 	</div>
-
-	<script>
-		window.addEventListener("keydown", (event) => {
-			if (event.key == "c" || event.code == "KeyC") {
-				alert("Please do not use your device to copy the phone/emails provided. It will be incorrect.");
-			}
-		})
-
-		window.oncontextmenu = function() {
-			alert("Please do not use your device to copy the phone/emails provided. It will be incorrect.");
-		}
-	</script>
 
 </body>
 
