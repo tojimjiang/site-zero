@@ -40,7 +40,7 @@ async function verify3() {
 	grecaptcha.ready(function() {
 		grecaptcha.execute('6Ld7eqUUAAAAAOxWpaaN_jRYlaLU_X3Ho0N1nH81', {action: 'hi'}).then(async function(token) {
 			try {
-				let response = await fetch('https://jimjiang-com-captcha.appspot.com',
+				let response = await fetch('https://captchapi-hi.jimjiang.com',
 				{method: 'post', body: JSON.stringify({token: token, type: 3})});
 				if (response) {
 					let object = await response.json();
