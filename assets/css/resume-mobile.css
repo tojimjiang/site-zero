@@ -42,11 +42,11 @@ div.resume-pill > p, div.resume-pill-sk > p{
 	margin-block-start: 0;
 	text-align: center;
 	font-size: 0.8em;
-	font-weight: 700;
+	font-weight: 500;
 }
 
 div.resume-pill-sk > p {
-	font-weight: 500 !important;
+	font-weight: 300 !important;
 }
 
 .resume-left-right-margin {
@@ -87,7 +87,7 @@ div.resume-pill-sk > p {
 .resume-header > h1 {
 	color: white;
 	font-size: 2.7em;
-	font-weight: 900;
+	font-weight: 700;
 	margin-block-end: 0.08em;
 	margin-block-start: 0.5em;
 }
@@ -101,7 +101,7 @@ div.resume-pill-sk > p {
 .resume-mid-header > .resume-mid-header-text {
 	color: white;
 	font-size: 1.8em;
-	font-weight: 700;
+	font-weight: 500;
 	margin-block-end: 0.08em;
 	margin-block-start: 0.16em;
 }
@@ -109,7 +109,7 @@ div.resume-pill-sk > p {
 .resume-mid-header > .resume-mid-header-basic-text {
 	color: white;
 	font-size: .9em;
-	font-weight: 500;
+	font-weight: 300;
 	margin-block-end: 0em;
 	margin-block-start: 0em;
 }
@@ -117,7 +117,7 @@ div.resume-pill-sk > p {
 .resume-mid-header > .resume-mid-header-basic-text > a{
 	color: white;
 	font-size: .9em;
-	font-weight: 500;
+	font-weight: 300;
 	text-decoration: none;
 	transition-duration: 1s;
 }
@@ -127,7 +127,7 @@ div.resume-pill-sk > p {
 .resume-mid-header > .resume-mid-header-basic-text > a:focus {
 	color: steelblue;
 	font-size: .9em;
-	font-weight: 900;
+	font-weight: 700;
 	text-decoration: none;
 	background-color: white;
 }
@@ -140,7 +140,7 @@ div.resume-pill-sk > p {
 .resume-mid-sub-header > .resume-mid-sub-header-text {
 	color: white;
 	font-size: 1.15em;
-	font-weight: 500;
+	font-weight: 300;
 	margin-block-end: 0em;
 	margin-block-start: 0em;
 }
@@ -164,14 +164,14 @@ div.resume-pill-sk > p {
 
 .resume-block-title{
 	font-size: 1.8em;
-	font-weight: 700;
+	font-weight: 500;
 	margin-block-end: 0;
 	margin-block-start: 0;
 }
 
 h3.resume-block-title{
 	font-size: 1.15em;
-	font-weight: 500;
+	font-weight: 300;
 }
 
 .resume-entry, .resume-entry > p{
