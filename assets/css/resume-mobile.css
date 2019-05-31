@@ -1,0 +1,228 @@
+html, body {
+	margin: 0;
+}
+
+.contained {
+	padding: 0 5vw;
+}
+
+.resume {
+	margin: 0;
+	font-family: "Roboto", "Arial", sans-serif;
+}
+
+.resume p {
+	font-size: 0.9em;
+}
+
+.resume-pill, .resume-pill-sk {
+	border: 2px solid black;
+	padding: 0.8vh;
+	border-radius: 50px;
+	margin: 0.2vh;
+	background: white;
+	transition-duration: 1s;
+}
+
+.resume-pill:hover, .resume-pill-sk:hover,
+.resume-pill:active, .resume-pill-sk:active,
+.resume-pill:focus, .resume-pill-sk:focus {
+	border-color: white;
+	background: black;
+	color: white;
+}
+
+.resume-pill-sk {
+	border: 1px solid black;
+	padding: 0.8vh 1vh !important;
+}
+
+div.resume-pill > p, div.resume-pill-sk > p{
+	margin-block-end: 0;
+	margin-block-start: 0;
+	text-align: center;
+	font-size: 0.8em;
+	font-weight: 700;
+}
+
+div.resume-pill-sk > p {
+	font-weight: 500 !important;
+}
+
+.resume-left-right-margin {
+	padding: 0 2em;
+}
+
+.resume-top-bottom {
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+}
+
+.resume-top {
+	padding-top: 0.5em;
+}
+
+.resume-white {
+	background-color: white;
+}
+.resume-no-linespace {
+	margin-block-end: 0 !important;
+	margin-block-start: 0 !important;
+}
+
+.resume-time, .resume-place, .resume-achievement {
+	font-weight: bolder;
+}
+
+.resume-page {
+	display: flex;
+	flex-direction: column;
+}
+
+.resume-header {
+	text-align: left;
+	background: royalblue;
+}
+
+.resume-header > h1 {
+	color: white;
+	font-size: 2.7em;
+	font-weight: 900;
+	margin-block-end: 0.08em;
+	margin-block-start: 0.5em;
+}
+
+.resume-mid-header {
+	text-align: left;
+	background: royalblue;
+	padding-bottom: 0.08em;
+}
+
+.resume-mid-header > .resume-mid-header-text {
+	color: white;
+	font-size: 1.8em;
+	font-weight: 700;
+	margin-block-end: 0.08em;
+	margin-block-start: 0.16em;
+}
+
+.resume-mid-header > .resume-mid-header-basic-text {
+	color: white;
+	font-size: .9em;
+	font-weight: 500;
+	margin-block-end: 0em;
+	margin-block-start: 0em;
+}
+
+.resume-mid-header > .resume-mid-header-basic-text > a{
+	color: white;
+	font-size: .9em;
+	font-weight: 500;
+	text-decoration: none;
+	transition-duration: 1s;
+}
+
+.resume-mid-header > .resume-mid-header-basic-text > a:hover,
+.resume-mid-header > .resume-mid-header-basic-text > a:active,
+.resume-mid-header > .resume-mid-header-basic-text > a:focus {
+	color: steelblue;
+	font-size: .9em;
+	font-weight: 900;
+	text-decoration: none;
+	background-color: white;
+}
+
+.resume-mid-sub-header {
+	text-align: left;
+	background: steelblue;
+}
+
+.resume-mid-sub-header > .resume-mid-sub-header-text {
+	color: white;
+	font-size: 1.15em;
+	font-weight: 500;
+	margin-block-end: 0em;
+	margin-block-start: 0em;
+}
+
+.resume-menu, .resume-mid-menu{
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: left;
+	background-color: steelblue;
+}
+
+.resume-mid-menu {
+	background-color: aliceblue;
+}
+
+.resume-block {
+	text-align: left;
+	background-color: white;
+}
+
+.resume-block-title{
+	font-size: 1.8em;
+	font-weight: 700;
+	margin-block-end: 0;
+	margin-block-start: 0;
+}
+
+h3.resume-block-title{
+	font-size: 1.15em;
+	font-weight: 500;
+}
+
+.resume-entry, .resume-entry > p{
+	margin-block-end: 0.33em;
+	margin-block-start: 0em;
+	vertical-align: baseline;
+}
+
+.resume-entry > .resume-entry-detail .resume-no-linespace {
+	margin-block-end: 0em;
+	margin-block-start: 0em;
+	white-space: pre-wrap;
+}
+
+
+@media screen {
+	/* emulate a page */
+	.resume-page{
+		max-width: 8.5in;
+		min-height: 11in;
+		background-color: royalblue;
+		border: 1px solid gray;
+		width: 100%;
+	}
+}
+
+@media print {
+	nav {
+		display: none;
+	}
+
+	div.do-not-print {
+		display: none !important;
+	}
+
+	div.contained {
+		padding: 0;
+	}
+
+	div.resume-page{
+		width: 100% !important;
+		max-width: none !important;
+		
+	}
+
+	html {
+		background-color: royalblue;
+		overflow: visible;
+	}
+
+	div {
+		overflow: visible
+	}
+}
