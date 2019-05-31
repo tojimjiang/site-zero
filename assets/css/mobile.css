@@ -93,17 +93,19 @@ div.centerer{
 div.allcenterer {
 	display: flex;
 	justify-content: center;
+	text-align: center;
 	/* True Center (Compensate for div contained) */
-	padding-left: 6vw;
 }
 
 div.contained{
 	padding-left: 2vw;
-	padding-right: 8vw;
+	padding-right: 2vw;
 }
 
 .content{
 	text-align: left;
+	max-width: 90vw;
+	padding-left: 3vw;
 }
 
 img.navicon{
@@ -160,16 +162,18 @@ a.project:link, a.project:visited{
 	text-decoration: none;
 	color: #000;
 	background-color: #ddd;
-	padding: 1vw;
+	padding: 2vh;
 	display:block;
-	margin: 1vw;
+	margin: 2vh;
+	text-align: center;
+	transition-duration: 1s;
 }
 
 a.project:hover, a.project:active, a.project:focus{
 	text-decoration: none;
 	color: #fff;
 	background-color: #000;
-	padding: 1vw;
+	padding: 2vh;
 	display:block;
-	margin: 1vw;
+	margin: 2vh;
 }
