@@ -125,7 +125,7 @@ div.resume-pill-sk > p {
 .resume-mid-header > .resume-mid-header-basic-text > a:hover,
 .resume-mid-header > .resume-mid-header-basic-text > a:active,
 .resume-mid-header > .resume-mid-header-basic-text > a:focus {
-	color: steelblue;
+	color: #1B3F8B;
 	font-size: .9em;
 	font-weight: 900;
 	text-decoration: none;
@@ -134,7 +134,7 @@ div.resume-pill-sk > p {
 
 .resume-mid-sub-header {
 	text-align: left;
-	background: steelblue;
+	background: #1B3F8B;
 }
 
 .resume-mid-sub-header > .resume-mid-sub-header-text {
@@ -150,11 +150,11 @@ div.resume-pill-sk > p {
 	flex-wrap: wrap;
 	align-items: center;
 	justify-content: left;
-	background-color: steelblue;
+	background-color: #1B3F8B;
 }
 
 .resume-mid-menu {
-	background-color: aliceblue;
+	background-color: #cdf0ff;
 }
 
 .resume-block {
