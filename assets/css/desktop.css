@@ -10,7 +10,9 @@ nav{
 }
 
 #menufix {
-	display: flex;
+	/* Webkit browsers can not render this fixing element correctly as a flexbox*/
+	/* with a variable margin-bottom, so use an inline-block*/
+	display: inline-block;
 	position: relative;
 	z-index: 0;
 	overflow: hidden;
