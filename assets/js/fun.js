@@ -1,6 +1,6 @@
 let running = false;
 let event = null;
-let fonts = ["Abril Fatface ", "Aguafina Script ", "Amatic SC ", "Anton ", "Arima Madurai ", "Astloch ", "Autour One ", "Bigelow Rules ", "Bungee Shade ", "Cinzel ", "Cinzel Decorative ", "Codystar ", "Courgette ", "Emblema One ", "Faster One ", "Freckle Face ", "Great Vibes ", "Hanalei ", "Kalam ", "Kaushan Script ", "Kumar One Outline ", "Lateef ", "Libre Barcode 39 ", "Libre Barcode 39 Text ", "Mali ", "Megrim ", "Monoton ", "Nanum Brush Script ", "Nosifer ", "Orbitron ", "Pacifico ", "Permanent Marker ", "Petit Formal Script ", "Pompiere ", "Poppins ", "Press Start 2P ", "Raleway ", "Rock Salt ", "Shojumaru ", "Shrikhand ", "Sofadi One ", "Swanky and Moo Moo ", "Tangerine ", "Trochut ", "Viga ", "ZCOOL KuaiLe"];
+let fonts = ["Abril Fatface", "Aguafina Script", "Amatic SC", "Anton", "Arima Madurai", "Astloch", "Autour One", "Bigelow Rules", "Bungee Shade", "Cinzel", "Cinzel Decorative", "Codystar", "Courgette", "Emblema One", "Faster One", "Freckle Face", "Great Vibes", "Hanalei", "Kalam", "Kaushan Script", "Kumar One Outline", "Lateef", "Libre Barcode 39 Text", "Mali", "Megrim", "Monoton", "Nanum Brush Script", "Nosifer", "Orbitron", "Pacifico", "Permanent Marker", "Petit Formal Script", "Pompiere", "Poppins", "Press Start 2P", "Raleway", "Rock Salt", "Shojumaru", "Shrikhand", "Sofadi One", "Swanky and Moo Moo", "Tangerine", "Trochut", "Viga", "ZCOOL KuaiLe"];
 let styleM;
 let styleT;
 let styleD;
