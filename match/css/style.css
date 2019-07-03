@@ -1,0 +1,210 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	font-family: "Poppins", "sans-serif";
+}
+
+/* Menu */
+#menufix {
+	display: flex;
+	position: relative;
+	z-index: 0;
+	overflow: hidden;
+	justify-content: flex-end;
+}
+
+/* Nav Bar CSS */
+#navList {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: black;
+	border: none;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+#navLeftFlex {
+	display: flex;
+	justify-content: flex-start;
+}
+
+#navRightFlex {
+	display: flex;
+	justify-content: flex-end;
+}
+
+li.left, li.right {
+	display: flex;
+}
+
+a.navLeft:link, a.navLeft:visited{
+	text-decoration: none;
+	background-color: #000;
+	color: white;
+	font-weight: normal;
+	padding: 1vw;
+	transition-duration: 0.5s;
+	transition-timing-function: cubic-bezier(.24,.04, .22, .92);;
+}
+
+a.navLeft:hover, a.navLeft:active, a.navLeft:focus{
+	text-decoration: none;
+	background-color: #fff;
+	color: black;
+	font-weight: lighter;
+	padding: 1vw;
+}
+
+a.navRight:link, a.navRight:visited{
+	text-decoration: none;
+	background-color: #000;
+	color: white;
+	font-weight: normal;
+	padding: 1vw;
+	transition-duration: 0.5s;
+	transition-timing-function: cubic-bezier(.24,.04, .22, .92);
+}
+
+a.navRight:hover, a.navRight:active, a.navRight:focus{
+	text-decoration: none;
+	background-color: #fff;
+	color: black;
+	font-weight: lighter;
+	padding: 1vw;
+}
+
+#allText {
+	z-index: 5;
+	text-align: center;
+	width: 80vw;
+	margin: auto;
+}
+
+/* Special Page Layout CSS via DIV */
+div.spacer {
+	width:100%;
+	height: 2.5vh;
+	overflow: hidden;
+}
+
+.footer {
+	padding: 1vw;
+	overflow: hidden;
+	background-color: black;
+	border-width: 0px;
+	border-style: solid;
+	color: white;
+	text-align: center;
+}
+
+#footerFix {
+	width:100%;
+	overflow: hidden;
+}
+
+#start, #end {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.startButton, .resetButton, #submit, #playAgain {
+	width: 200px;
+	background-color: black;
+	color: white;
+	border: none;
+	font-family: "Poppins", "sans-serif";
+	font-size: 0.9em;
+	font-weight: 100;
+	padding: 1%;
+	transition-duration: 0.5s;
+	transition-timing-function: cubic-bezier(.24,.04, .22, .92);
+}
+
+.startButton:hover, .startButton:active, .startButton:focus,
+.resetButton:hover, .resetButton:active, .resetButton:focus,
+#submit:hover, #submit:active, #submit:focus,
+#playAgain:hover, #playAgain:active, #playAgain:focus {
+	text-decoration: none;
+	background-color: #fff;
+	color: black;
+	font-weight: lighter;
+	padding: 1vw;
+}
+
+.resetButton, #submit, #playAgain{
+	margin: 1%;
+}
+
+#name {
+	min-width: 600px;
+	max-width: 100% !important;
+	border: 3px solid #000;
+	color: #000;
+	background-color: #fff;
+	font-family: 'Poppins';
+	font-size: 2em;
+	transition-duration: 0.5s;
+	transition-timing-function: cubic-bezier(.24,.04, .22, .92);
+}
+
+#name:hover, #name:active, #name:focus{
+	border: 3px solid #111;
+	color: #fff;
+	background-color: #000;
+}
+
+#end {
+	display: none;
+}
+
+#record {
+	display: none;
+	text-align: center;
+}
+
+.card {
+	height: 11.5vh;
+	width: 11.5vh;
+	padding: 0.25vh;
+	flex-shrink: 2;
+	min-width: 1px;
+	/* Height is handled in JS */
+}
+
+.gameRow {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+#game {
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: center;
+}
+
+#time {
+	text-align: center;
+	font-size: 1.5em;
+	font-weight: 900;
+}
+
+#scores, #end {
+	text-align: center;
+}
+
+a:link, a:visited{
+	color: #fff;
+	text-decoration: none;
+	transition-duration: 1s;
+}
+
+a:hover, a:active, a:focus{
+	text-decoration: underline;
+}
