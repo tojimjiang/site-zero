@@ -190,6 +190,11 @@ a.project:hover, a.project:active, a.project:focus{
 	width: 32%;
 }
 
+.subtext {
+	font-size: 0.75em;
+	display: block;
+}
+
 @media print {
 	a.navLeft:link, a.navLeft:visited{
 		text-decoration: none;

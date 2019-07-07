@@ -185,3 +185,8 @@ a.project:hover, a.project:active, a.project:focus{
 	margin: 2vw;
 	width: 32%;
 }
+
+.subtext {
+	font-size: 0.75em;
+	display: block;
+}

@@ -179,3 +179,8 @@ a.project:hover, a.project:active, a.project:focus{
 	display:block;
 	margin: 2vh;
 }
+
+.subtext {
+	font-size: 0.75em;
+	display: block;
+}
