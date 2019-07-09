@@ -1,6 +1,7 @@
 html, body{
 	margin: 0;
 	font-family: "Raleway", "Arial", sans-serif;
+	font-display: swap;
 }
 
 nav{
