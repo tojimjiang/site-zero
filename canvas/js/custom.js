@@ -45,22 +45,38 @@ function refreshClick(buttonElements) {
 
 function loadCells() {
 	let containerElt = document.getElementById('container');
-	for (let i = 0; i < 20; i++) {
-		for (let j = 0; j < 20; j++) {
+	let containerW = window.innerWidth;
+	let containerH = window.innerHeight;
+	width = Math.floor(containerW / 16);
+	height = Math.floor(containerH / 21);
+	for (let i = 0; i < width; i++) {
+		for (let j = 0; j < height; j++) {
 			newElt = document.createElement("div");
 			const id_string = `cell_${i}_${j}`
-			const topOffset = 25 * j;
-			const leftOffset = 25 * i;
-			const style = `top: ${topOffset}px; left: ${leftOffset}px; height: 25px; width: 25px; background-color: white;`;
+			const topOffset = 15 * j;
+			const leftOffset = 15 * i;
+			const style = `top: ${topOffset}px; left: ${leftOffset}px; height: 15px; width: 15px; background-color: white;`;
 			newElt.id = id_string;
-			newElt.left =
-				newElt.setAttribute("class", "cell");
+			//newElt.left =
+			newElt.setAttribute("class", "cell");
 			newElt.setAttribute("style", style);
 			containerElt.appendChild(newElt);
 		}
 	}
+	containerElt.style.width = `${width * 15}px`;
+	containerElt.style.height = `${height * 15}px`;
+	container.addEventListener('mousedown', function(event) {
+		oldX = event.clientX;
+		oldY = event.clientY;
+		going = true;
+	}, false)
+	container.addEventListener('mouseup', function() {
+		going = false;
+	}, false)
+	container.addEventListener('mousemove', track);
 }
 
+/*
 function loadCellsClick() {
 	const allCellElements = document.querySelectorAll('.cell');
 	// now let's visit each one of these elements
@@ -70,6 +86,43 @@ function loadCellsClick() {
 			// Part 4, modififed to use color.
 			this.style['background-color'] = color;
 		}
+	}
+}
+*/
+
+function smooth(x, y, limitX, limitY) {
+	if (x == limitX || y == limitY) {
+		return;
+	}
+	// Larger X and Y (down right)
+	if (x > oldX && y > oldY) {
+		document.elementFromPoint(x + 2, y + 2).style['background-color'] = color;
+		smooth(x + 2, y + 2, limitX, limitY)
+	}
+	// Smaller X and Y (up left)
+	else if (x < oldX && y < oldY) {
+		document.elementFromPoint(x - 2, y - 2).style['background-color'] = color;
+		smooth(x - 2, y - 2, limitX, limitY)
+	}
+	// Larger X, smaller Y (up right)
+	else if (x > oldX && y < oldY) {
+		document.elementFromPoint(x + 2, y - 2).style['background-color'] = color;
+		smooth(x + 2, y - 2, limitX, limitY)
+	}
+	// Smaller X, Larger Y (down left)
+	else if (x < oldX && y > oldY) {
+		document.elementFromPoint(x - 2, y + 2).style['background-color'] = color;
+		smooth(x - 2, y + 2, limitX, limitY)
+	}
+	oldX = x;
+	oldY = y;
+}
+
+function track() {
+	if (going) {
+		//smooth(oldX, oldY, event.clientX, event.clientY)
+		console.log(`${event.clientX}, ${event.clientY}`)
+    	document.elementFromPoint(event.clientX, event.clientY).style['background-color'] = color;
 	}
 }
 
@@ -114,12 +167,40 @@ function loadCustom() {
 	}
 }
 
+function loadHideMenu() {
+	let userMenuElt = document.getElementById('userMenu');
+	userMenuElt.style.display = 'none';
+
+	// Add hidden even on the title
+	let titleElt = document.getElementById('titleSpan');
+	// Prevent hover-click-accidental-close
+	let allow = false;
+	titleElt.addEventListener('mouseenter', function() {
+		userMenuElt.style.display = 'block';
+		setTimeout(function() {
+			allow = true;
+		}, 1500)
+	}, false)
+
+	// Close on title click OR menu button press
+	titleElt.addEventListener('click', function() {
+		if (allow) {
+			userMenuElt.style.display = 'none';
+		} 
+	}, false)
+
+	let closeMenuElt = document.getElementById('closeMenu');
+	closeMenuElt.addEventListener('click', function() {
+		userMenuElt.style.display = 'none';
+	}, false)
+}
+
 function loadAll() {
 	loadCells();
-	loadCellsClick();
+	//loadCellsClick();
 	loadClear();
 	loadCustom();
-
+	loadHideMenu();
 }
 
 window.onload = function () {
@@ -137,3 +218,8 @@ window.onload = function () {
 
 // Color Variable Storage
 let color = "black";
+let going = false;
+let oldX;
+let oldY;
+let width;
+let height;
