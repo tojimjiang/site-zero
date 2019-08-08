@@ -107,8 +107,7 @@ body {
 
 #container {
 	position: relative;
-	width: 500px;
-	height: 500px;
+	border: 1px solid black;
 	margin: auto;
 }
 
@@ -116,7 +115,7 @@ body {
 	position: absolute;
 	width: 250px;
 	height: 250px;
-	border: 1px solid black;
+	/*border: 1px solid black;*/
 }
 
 .buttons {
@@ -142,7 +141,7 @@ h1, p {
 	font-family: "Raleway", "Arial", sans-serif;
 }
 
-#clearAll, #customButton {
+#clearAll, #customButton, #closeMenu{
 	margin: 1vh 1vw;
 	width: 5vw;
 	height: 5vw;
