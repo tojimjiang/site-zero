@@ -4,14 +4,6 @@ function dirJS() {
 	titleElt.textContent = "🎨 Color Canvas 🎨";
 }
 
-// Responsive Menu Loading
-function menuReload() {
-	let navListElt = document.getElementById('navList');
-	let menu_offset = "margin-bottom: " + navListElt.offsetHeight + "px";
-	let menuFixElt = document.getElementById('menufix');
-	menuFixElt.setAttribute("style", menu_offset);
-}
-
 // Ink Selector UI Updater
 function selectShow(selectedId) {
 	// Select all button elements
@@ -43,12 +35,26 @@ function refreshClick(buttonElements) {
 	}
 }
 
+function totalOffsetMarginHeight(element) {
+	let styles = window.getComputedStyle(element);
+  	return parseFloat(styles['marginTop']) + parseFloat(styles['marginBottom']) + element.offsetHeight;
+}
+
+function heightOfEverythingElse() {
+	let querySelectors = ['header', 'h1', '.spacer', '.footer']
+	let total = 0;
+	for (let i = 0; i < querySelectors.length; i++) {
+		total += totalOffsetMarginHeight(document.querySelector(querySelectors[i]));
+	}
+	return total;
+}
+
 function loadCells() {
 	let containerElt = document.getElementById('container');
 	let containerW = window.innerWidth;
-	let containerH = window.innerHeight;
+	let containerH = window.innerHeight - heightOfEverythingElse();
 	width = Math.floor(containerW / 16);
-	height = Math.floor(containerH / 21);
+	height = Math.floor(containerH / 15);
 	for (let i = 0; i < width; i++) {
 		for (let j = 0; j < height; j++) {
 			newElt = document.createElement("div");
@@ -65,64 +71,50 @@ function loadCells() {
 	}
 	containerElt.style.width = `${width * 15}px`;
 	containerElt.style.height = `${height * 15}px`;
-	container.addEventListener('mousedown', function(event) {
-		oldX = event.clientX;
-		oldY = event.clientY;
+	document.querySelector('#footerFix').style.height = `${Math.floor(containerH) - (height * 15) - 2}px`
+	// Mouse Events
+	container.addEventListener('mousedown', function (event) {
 		going = true;
 	}, false)
-	container.addEventListener('mouseup', function() {
+	container.addEventListener('mouseup', function () {
 		going = false;
 	}, false)
 	container.addEventListener('mousemove', track);
+	// Touch Events
+	container.addEventListener('touchstart', function (event) {
+		going = true;
+	}, false)
+	container.addEventListener('touchend', function () {
+		going = false;
+	}, false)
+	container.addEventListener('touchcancel', function () {
+		going = false;
+	}, false)
+	container.addEventListener('touchmove', trackTouch);
 }
 
-/*
-function loadCellsClick() {
-	const allCellElements = document.querySelectorAll('.cell');
-	// now let's visit each one of these elements
-	for (let i = 0; i < allCellElements.length; i++) {
-		// tell this cell that it should listen for a mouse event
-		allCellElements[i].onclick = function () {
-			// Part 4, modififed to use color.
-			this.style['background-color'] = color;
+function colorCell(x, y) {
+	let elt = document.elementFromPoint(x, y);
+	if (elt.classList.contains('cell')) {
+		elt.style['background-color'] = color;
+	}
+}
+
+function trackTouch() {
+	if (going) {
+		//smooth(oldX, oldY, event.clientX, event.clientY)
+		console.log(`Touch: ${event.touches[0].clientX}, ${event.touches[0].clientY}`)
+		for (let i = 0; i < event.touches.length; i++) {
+			colorCell(event.touches[i].clientX, event.touches[i].clientY)
 		}
 	}
-}
-*/
-
-function smooth(x, y, limitX, limitY) {
-	if (x == limitX || y == limitY) {
-		return;
-	}
-	// Larger X and Y (down right)
-	if (x > oldX && y > oldY) {
-		document.elementFromPoint(x + 2, y + 2).style['background-color'] = color;
-		smooth(x + 2, y + 2, limitX, limitY)
-	}
-	// Smaller X and Y (up left)
-	else if (x < oldX && y < oldY) {
-		document.elementFromPoint(x - 2, y - 2).style['background-color'] = color;
-		smooth(x - 2, y - 2, limitX, limitY)
-	}
-	// Larger X, smaller Y (up right)
-	else if (x > oldX && y < oldY) {
-		document.elementFromPoint(x + 2, y - 2).style['background-color'] = color;
-		smooth(x + 2, y - 2, limitX, limitY)
-	}
-	// Smaller X, Larger Y (down left)
-	else if (x < oldX && y > oldY) {
-		document.elementFromPoint(x - 2, y + 2).style['background-color'] = color;
-		smooth(x - 2, y + 2, limitX, limitY)
-	}
-	oldX = x;
-	oldY = y;
 }
 
 function track() {
 	if (going) {
 		//smooth(oldX, oldY, event.clientX, event.clientY)
-		console.log(`${event.clientX}, ${event.clientY}`)
-    	document.elementFromPoint(event.clientX, event.clientY).style['background-color'] = color;
+		console.log(`Mouse: ${event.clientX}, ${event.clientY}`)
+		colorCell(event.clientX, event.clientY);
 	}
 }
 
@@ -174,23 +166,32 @@ function loadHideMenu() {
 	// Add hidden even on the title
 	let titleElt = document.getElementById('titleSpan');
 	// Prevent hover-click-accidental-close
-	let allow = false;
-	titleElt.addEventListener('mouseenter', function() {
-		userMenuElt.style.display = 'block';
-		setTimeout(function() {
-			allow = true;
-		}, 1500)
+	titleElt.addEventListener('mouseenter', function () {
+		if (userMenuElt.style.display == 'none') {
+			allow = false;
+			userMenuElt.style.display = 'block';
+			setTimeout(function () {
+				allow = true;
+			}, 500)
+		}
 	}, false)
 
 	// Close on title click OR menu button press
-	titleElt.addEventListener('click', function() {
-		if (allow) {
+	titleElt.addEventListener('click', function () {
+		if (userMenuElt.style.display == 'none') {
+			allow = false;
+			userMenuElt.style.display = 'block';
+			setTimeout(function () {
+				allow = true;
+			}, 500)
+		}
+		else if (allow) {
 			userMenuElt.style.display = 'none';
-		} 
+		}
 	}, false)
 
 	let closeMenuElt = document.getElementById('closeMenu');
-	closeMenuElt.addEventListener('click', function() {
+	closeMenuElt.addEventListener('click', function () {
 		userMenuElt.style.display = 'none';
 	}, false)
 }
@@ -211,15 +212,11 @@ window.onload = function () {
 	// Add Color button Clicks
 	let buttonElements = document.querySelectorAll('.colorButton');
 	refreshClick(buttonElements);
-
-	// Window Listener
-	window.addEventListener('resize', menuReload);
 }
 
 // Color Variable Storage
 let color = "black";
 let going = false;
-let oldX;
-let oldY;
 let width;
 let height;
+let allow = false;
