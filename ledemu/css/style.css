@@ -1,0 +1,153 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	font-family: "Raleway", "Arial", sans-serif;
+	background-color: black;
+	color: white;
+}
+
+/* Menu CSS */
+
+#menufix {
+	display: flex;
+	position: relative;
+	z-index: 0;
+	overflow: hidden;
+	justify-content: flex-end;
+}
+
+/* Nav Bar CSS */
+
+#navList {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: white;
+	font-family: "Raleway", "Arial", sans-serif;
+}
+
+/* Align Left Elements */
+
+a.navLeft {
+	float: left;
+}
+
+a.navLeft:link, a.navLeft:visited {
+	text-decoration: none;
+	background-color: white;
+	color: black;
+	font-weight: normal;
+	padding: 1vw;
+}
+
+a.navLeft:hover, a.navLeft:active, a.navLeft:focus {
+	text-decoration: none;
+	background-color: black;
+	color: white;
+	font-weight: lighter;
+	padding: 1vw;
+}
+
+/* Align Right Elements */
+
+a.navRight {
+	float: right;
+}
+
+a.navRight:link, a.navRight:visited {
+	text-decoration: none;
+	background-color: white;
+	color: black;
+	font-weight: normal;
+	padding: 1vw;
+}
+
+a.navRight:hover, a.navRight:active, a.navRight:focus {
+	text-decoration: none;
+	background-color: black;
+	color: white;
+	font-weight: lighter;
+	padding: 1vw;
+}
+
+/* Special Page Layout CSS via DIV */
+
+div.spacer {
+	width: 100%;
+	height: 2.5vh;
+	overflow: hidden;
+}
+
+.footer {
+	padding: 1vw;
+	overflow: hidden;
+	background-color: white;
+	color: black;
+	text-align: center;
+}
+
+#footerFix {
+	width: 100%;
+	overflow: hidden;
+}
+
+.flex-wrap {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	flex-direction: column;
+}
+
+body {
+	font-family: sans-serif;
+}
+
+#container {
+	position: relative;
+	/*width: 1000px;*/
+	height: 480px;
+	margin: auto;
+}
+
+.cell {
+	position: absolute;
+	border: 1px solid gray;
+	border-radius: 19px;
+}
+
+.buttons {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	align-items: center;
+}
+
+.colorButton {
+	margin: 1vh 1vw;
+	width: 5vw;
+	height: 5vw;
+	min-width: 75px;
+	min-height: 75px;
+	border: 3px solid gray;
+	border-radius: 50%;
+	font-family: "Raleway", "Arial", sans-serif;
+}
+
+h1, p {
+	text-align: center;
+	font-family: "Raleway", "Arial", sans-serif;
+}
+
+#clearAll, #customButton, #displaySomething, #export {
+	margin: 1vh 1vw;
+	width: 5vw;
+	height: 5vw;
+	min-width: 75px;
+	min-height: 75px;
+	border: 3px solid gray;
+	border-radius: 50%;
+	background-color: black;
+	color: white;
+	font-family: "Raleway", "Arial", sans-serif;
+}
