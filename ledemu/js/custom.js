@@ -245,6 +245,7 @@ function loadDisplay() {
 	}
 }
 
+/*
 function loadExport() {
 	let exportElt = document.getElementById('export');
 	exportElt.onclick = function () {
@@ -260,6 +261,7 @@ function loadExport() {
 		window.alert(`[${answer}]`);
 	}
 }
+*/
 
 function loadAll() {
 	loadCells();
@@ -267,7 +269,7 @@ function loadAll() {
 	loadClear();
 	loadCustom();
 	loadDisplay();
-	loadExport();
+	//loadExport();
 }
 
 window.onload = function () {
