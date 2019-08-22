@@ -12,7 +12,7 @@
 	<!-- CSS Style Sheet -->
 	<!-- Media query for full browser width -->
 	<link rel="stylesheet" href="css/style.css">
-	
+
 	<!-- Prevent smartphones from scaling pages down -->
 	<meta name="viewport" content="initial-scale=1">
 
@@ -24,20 +24,18 @@
 </head>
 
 <body>
-	<!-- List Style Navigation -->
+	<!-- Flex Box Based Navigation -->
 	<header>
 		<nav>
-			<ul id="navList">
-				<div id="mobileNavAll">
-					<li class="left"><a class="navLeft" href="index.html">Jim Jiang - Color Canvas</a></li>
+			<div id="navList">
+				<div id="navLeftFlex">
+					<a class="navLeft" href="index.html">Jim Jiang - Color Canvas</a>
 
-					<div id="mobileNav">
-						<li class="right"><a class="navRight"
-								href="https://url.jimjiang.com/jimjiang-home.html">jimjiang.com</a></li>
-						<li class="right"><a class="navRight" href="../index.html">Home</a></li>
-					</div>
 				</div>
-			</ul>
+				<div id="navRightFlex">
+					<a class="navRight" href="https://jimjiang.com">jimjiang.com</a>
+				</div>
+			</div>
 		</nav>
 	</header>
 

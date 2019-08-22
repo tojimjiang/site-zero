@@ -47,15 +47,15 @@ function loadCells() {
 	let containerElt = document.getElementById('container');
 	let containerW = window.innerWidth;
 	let containerH = window.innerHeight;
-	width = Math.floor(containerW / 21);
-	height = Math.floor(containerH / 21);
+	width = Math.floor(containerW / 15.5);
+	height = Math.floor(containerH / 15.5);
 	for (let i = 0; i < width; i++) {
 		for (let j = 0; j < height; j++) {
 			newElt = document.createElement("div");
 			const id_string = `cell_${i}_${j}`
-			const topOffset = 20 * j;
-			const leftOffset = 20 * i;
-			const style = `top: ${topOffset}px; left: ${leftOffset}px; height: 19px; width: 19px; background-color: black;`;
+			const topOffset = 15 * j;
+			const leftOffset = 15 * i;
+			const style = `top: ${topOffset}px; left: ${leftOffset}px; height: 14px; width: 14px; background-color: black;`;
 			newElt.id = id_string;
 			newElt.left =
 				newElt.setAttribute("class", "cell");
@@ -63,8 +63,8 @@ function loadCells() {
 			containerElt.appendChild(newElt);
 		}
 	}
-	containerElt.style.width = `${width * 20}px`;
-	containerElt.style.height = `${height * 20}px`;
+	containerElt.style.width = `${width * 15}px`;
+	containerElt.style.height = `${height * 15}px`;
 }
 
 function loadCellsClick() {
@@ -83,6 +83,7 @@ function loadCellsClick() {
 function loadClear() {
 	let clearElt = document.getElementById('clearAll');
 	clearElt.onclick = function () {
+		clearing = true;
 		const cellElements = document.querySelectorAll('.cell');
 
 		// now let's visit each one of these elements
@@ -90,6 +91,12 @@ function loadClear() {
 			// Part 4, modififed to use color.
 			cellElements[i].style['background-color'] = 'black';
 		}
+
+		for (let i = 0; i < timers.length; i++) {
+			clearTimeout(timers[i][0])
+		}
+		clearing = false;
+		timers = []
 	};
 }
 
@@ -161,7 +168,7 @@ let map = {
 	'/': [[0, 4], [1, 3], [2, 2], [3, 1], [4, 0]],
 	'\\': [[0, 0], [1, 1], [2, 2], [3, 3], [4, 4]],
 	',': [[0, 2], [0, 3], [1, 2], [1, 3], [1, 4]],
-	'?': [[0, 1], [1, 0], [2, 0], [2, 3], [3, 0], [3, 2], [4, 1]],
+	'?': [[0, 1], [1, 0], [2, 0], [2, 2], [2, 4], [3, 0], [3, 2], [4, 1]],
 	'(': [[1, 1], [1, 2], [1, 3], [2, 0], [2, 1], [2, 3], [2, 4], [3, 0], [3, 4]],
 	')': [[1, 0], [1, 4], [2, 0], [2, 1], [2, 3], [2, 4], [3, 1], [3, 2], [3, 3]],
 	'<': [[1, 2], [2, 1], [2, 3], [3, 0], [3, 4]],
@@ -177,7 +184,7 @@ let map = {
 	'%': [[0, 0], [0, 1], [0, 4], [1, 0], [1, 3], [2, 2], [3, 1], [3, 4], [4, 0], [4, 3], [4, 4]],
 	'^': [[0, 2], [1, 1], [2, 0], [3, 1], [4, 2]],
 	'&': [[0, 1], [0, 3], [1, 0], [1, 2], [1, 4], [2, 0], [2, 4], [3, 0], [3, 2], [3, 4], [4, 2], [4, 3]],
-	'*': [[0, 1], [1, 0], [1, 1], [1, 2], [2, 1]],
+	'*': [[1, 0], [1, 2], [2, 1], [3, 0], [3, 2]],
 	'[': [[1, 0], [1, 1], [1, 2], [1, 3], [1, 4], [2, 0], [2, 4], [3, 0], [3, 4]],
 	']': [[1, 0], [1, 4], [2, 0], [2, 4], [3, 0], [3, 1], [3, 2], [3, 3], [3, 4]]
 }
@@ -199,10 +206,57 @@ function displayLetter(letter, position, line) {
 	return position
 }
 
+function setSuperTimeout(handler, timeout) {
+	let index = timers.length;
+	if (!pause) {
+		return [setTimeout( function() {
+			if (timers[index][2]) {
+				handler()
+				timers[index][2] = false
+			}
+		}, timeout), handler, true, new Date().getTime(), timeout]
+	}
+	// Timeout, handler, pending?, startStamp, timeout
+	else {
+		return [false, handler, true, new Date().getTime(), timeout]
+	}
+}
+
+function displayLetterTime(letter, position, line) {
+	if (valid.includes(letter)) {
+		timers.push(
+			setSuperTimeout(function () {
+				if (!clearing) {
+					for (let px = 0; px < map[letter].length; px++) {
+						timers.push(
+							setSuperTimeout(function () {
+								if (!clearing) {
+									document.getElementById(`cell_${map[letter][px][0] + 6 * position}_${map[letter][px][1] + 6 * line}`).style['background-color'] = color;
+								}
+							}, map[letter][px][0]*3 + map[letter][px][1]*18)
+								)
+					}
+				}
+			}, 100 * position + 16.6 * line * width)
+		)
+	}
+	else if (letter == ' ') {
+		if (position === 0) {
+			position = -1
+		}
+	}
+	return position
+}
+
 function displayWord(word, position, line) {
 	text = word.split('')
 	for (let j = 0; j < text.length; j++ , position++) {
-		position = displayLetter(text[j], position, line)
+		if (instant) {
+			position = displayLetter(text[j], position, line);
+		}
+		else {
+			position = displayLetterTime(text[j], position, line);
+		}
 	}
 	return position
 }
@@ -215,20 +269,20 @@ function loadDisplay() {
 			return;
 		}
 		//let words = input.toUpperCase().split(/( .\/\\?()<>\-_+=!@#$%^&*\[\])+/);
-		let words = input.toUpperCase().split(/([ ./\\?()<>\-_+=!@#$%^&*\[\]])+/);
+		let words = input.toUpperCase().split(/([ ./\\?()<>\-_+=!@#$%^&*\[\]])/);
 		console.log(words)
 		let line = 0;
 		let position = 0;
 		for (let i = 0; i < words.length; i++) {
 			// Can word fit on current line?
 			// No
-			if (position * 6 + words[i].length * 6 - 1> width) {
+			if (position * 6 + words[i].length * 6 - 1 > width) {
 				// Can the word fit on an entire line?
 				// No
 				if (words[i].length * 6 - 1 > width) {
 					// Display what fits, cut off the rest
-					shortWord = words[i].slice(0, Math.floor((width+1)/6)-words[i].length-position);
-					words[i] = words[i].slice(Math.floor((width+1)/6)-words[i].length-position);
+					shortWord = words[i].slice(0, Math.floor((width + 1) / 6) - words[i].length - position);
+					words[i] = words[i].slice(Math.floor((width + 1) / 6) - words[i].length - position);
 					position = displayWord(shortWord, position, line)
 				}
 				// Yes (No also need to reset the line)
@@ -263,6 +317,58 @@ function loadExport() {
 }
 */
 
+function instantToggle() {
+	if (instant) {
+		instant = false;
+		localStorage.setItem("instant", false);
+		document.getElementById('instantStatus').textContent = 'Change to Instant Display';
+		document.getElementById('pauseStatus').style.display = 'inherit';
+	}
+	else {
+		instant = true;
+		localStorage.setItem("instant", true);
+		document.getElementById('instantStatus').textContent = 'Change to Animated Display';
+		document.getElementById('pauseStatus').style.display = 'none';
+		// Purge Buffer
+		for (let i = 0; i < timers.length; i++) {
+			if (timers[i][2]) {
+				timers[i][1]()
+				timers[i][2] = false
+			}
+			clearTimeout(timers[i][0])
+		}
+		timers = []
+	}
+}
+
+function pauseToggle() {
+	if (pause) {
+		pause = false;
+		document.getElementById('pauseStatus').textContent = 'Pause Animation';
+		// Resume Buffers
+		for (let i = 0; i < timers.length; i++) {
+			if (timers[i][2]) {
+				timers[i][0] = setTimeout(function() {
+					if (timers[i][2]) {
+						timers[i][1]()
+						timers[i][2] = false
+					}
+				}, Math.max(timers[i][4], 0))
+				timers[i][3] = new Date().getTime()
+			}
+		}
+	}
+	else {
+		pause = true;
+		document.getElementById('pauseStatus').textContent = 'Resume Animation';
+		// Stop Buffers
+		for (let i = 0; i < timers.length; i++) {
+			clearTimeout(timers[i][0])
+			timers[i][4] = timers[i][4] - (new Date().getTime() - timers[i][3]);
+		}
+	}
+}
+
 function loadAll() {
 	loadCells();
 	loadCellsClick();
@@ -270,6 +376,29 @@ function loadAll() {
 	loadCustom();
 	loadDisplay();
 	//loadExport();
+
+	function storageTest(type) {
+		try {
+			let storage = window[type],
+				x = 'testing';
+			storage.setItem(x, x);
+			storage.removeItem(x);
+			console.log("Storage Pass");
+			return true;
+		}
+		catch (e) {
+			console.log("Storage Fail");
+			return false;
+		}
+	}
+
+	if (storageTest('localStorage')) {
+		// Instant Display Status
+		// Use true as string because localStorage returns a string.
+		if (localStorage.getItem("instant") === 'true') {
+			instantToggle();
+		}
+	}
 }
 
 window.onload = function () {
@@ -289,3 +418,7 @@ window.onload = function () {
 let color = "white";
 let width = 0;
 let height = 0;
+let timers = [];
+let clearing = false;
+let instant = false;
+let pause = false;
