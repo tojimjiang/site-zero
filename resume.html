@@ -24,10 +24,7 @@
 	<!-- ## FONTS (from Google) ## -->
 	<link href="https://fonts.googleapis.com/css?family=Roboto|Raleway" rel="stylesheet">
 
-	<!-- ## JavaScript ## -->
-	<!-- Custom -->
-	<script src="assets/js/custom.js"></script>
-
+	<meta charset="UTF-8">
 </head>
 
 <body>
@@ -43,7 +40,13 @@
 				</div>
 				<div id="navRightFlex">
 					<a target="_blank" class="navRight" href="github.html">GitHub</a></li>
-					<a class="navRight" onclick="window.print();return false;">Print</a></li>
+					<a class="navRight" onclick="
+					if (!/Edge/.test(navigator.userAgent)) {
+						window.print();return false;
+						}
+					else {
+						window.alert('Please use a different browser to print this page. Edge does not support correct styling.')
+					}">Print</a></li>
 				</div>
 				</ul>
 		</nav>
@@ -115,6 +118,9 @@
 							<p>Java</p>
 						</div>
 						<div class='resume-pill-sk'>
+							<p>JavaScript</p>
+						</div>
+						<div class='resume-pill-sk'>
 							<p>Python</p>
 						</div>
 						<div class='resume-pill-sk'>
@@ -156,7 +162,16 @@
 							<p>Progressive Web Apps</p>
 						</div>
 						<div class='resume-pill-sk'>
+							<p>PyTest</p>
+						</div>
+						<div class='resume-pill-sk'>
+							<p>Selenium</p>
+						</div>
+						<div class='resume-pill-sk'>
 							<p>Web Sockets</p>
+						</div>
+						<div class='resume-pill-sk'>
+							<p>Web Storage</p>
 						</div>
 					</div>
 					<div class="resume-left-right-margin resume-mid-sub-header">
@@ -192,14 +207,26 @@
 				<div class="resume-top-bottom resume-left-right-margin resume-block">
 					<h2 class="resume-block-title">Experience</h2>
 					<div class="resume-entry">
+						<p class="resume-entry-title"><span class="resume-time">July 2019</span> - <span
+								class="resume-time">Current</span> as <span class="resume-achievement">QA 
+								Software Engineer</span> at <span class="resume-place">Integral Ad Science</span></p>
+						<p class="resume-entry-detail resume-no-linespace">• Review, refine, formulate and maintain automation 
+							code for testing code quality, stability and, correctness.</p>
+						<p class="resume-entry-detail resume-no-linespace">• Broaden the depth and breadth of automated test 
+							coverage to facilitate prudent resource utilization to maintain a constantly growing and morphing code base.</p>
+						<p class="resume-entry-detail">• Implement behavior-driven testing automation empowering product and 
+							developer teams to have better comprehension and command of existing testing tools and 
+							frameworks, to enable greater team agility.
+						</p>
+					</div>
+					<div class="resume-entry">
 						<p class="resume-entry-title"><span class="resume-time">December 2018</span> - <span
 								class="resume-time">Current</span> as <span class="resume-achievement">Technology and Marketing
 								Director</span> at <span class="resume-place">IES Test Prep</span></p>
-						<p class="resume-entry-detail resume-no-linespace">• Develop new applications and company work
-							flows to improve value proposition of services to students and parents.</p>
-						<p class="resume-entry-detail resume-no-linespace">• Review and edit marketing materials for
-							professionalism, correctness, and quality.</p>
-						<p class="resume-entry-detail">• Develop and execute marketing strategies and promotional plans
+						<p class="resume-entry-detail resume-no-linespace">• Develop new applications and company workflows 
+							to improve the value proposition of services to students and parents, meanwhile truncating 
+							overhead and expenses for sales, support, and harmonization.</p>
+						<p class="resume-entry-detail">• Conceive and execute marketing strategies and promotional plans
 							to remain relevant in a competitive marketplace. </p>
 					</div>
 					<div class="resume-entry">
@@ -209,22 +236,18 @@
 						<p class="resume-entry-detail resume-no-linespace">• Develop and integrate web applications for
 							clients without any interruption in service, including websites, landing pages, internal
 							databases, assets, and company portals.</p>
-						<p class="resume-entry-detail resume-no-linespace">• Interface with clients for design and
-							functional approvals.</p>
-						<p class="resume-entry-detail resume-no-linespace">• Work with client tech teams to prepare for
-							integration with zero downtime.</p>
-						<p class="resume-entry-detail">• Delegate workload for projects between team members.</p>
+						<p class="resume-entry-detail resume-no-linespace">• Coordinate with clients for design, approval,
+							acceptance, integration, and delivery.</p>
 					</div>
 					<div class="resume-entry">
 						<p class="resume-entry-title"><span class="resume-time">October 2015</span> - <span
 								class="resume-time">May 2019</span> as <span class="resume-achievement">Computer Science
 								and Math Educator</span> at <span class="resume-place">Leap Education</span></p>
-						<p class="resume-entry-detail resume-no-linespace">• Develop new computer science curriculum for
-							students of various ages and skill levels in various programming languages and topics.</p>
-						<p class="resume-entry-detail resume-no-linespace">• Teach students topics though lectures, real
-							world examples, and hands on programming culminating in tangible results for students.</p>
-						<p class="resume-entry-detail">• Educate students ages 7-17 by creating exams, and administering
-							homework, preparing students for standardized testing and state benchmarks. </p>
+						<p class="resume-entry-detail resume-no-linespace">• Establish a new computer science curriculum for
+							diverse students in various programming languages and topics.</p>
+						<p class="resume-entry-detail resume-no-linespace">• Teach and engage students in complex and abstract 
+							topics through lectures, real-world applications, and hands-on programming culminating in tangible 
+							results for students.</p>
 					</div>
 				</div>
 				<div class="resume-left-right-margin resume-mid-header">
@@ -239,6 +262,19 @@
 		</div>
 	</div>
 
+	<div class="edge-print-warning do-not-print do-not-show">
+		<span class="wingdings">Please use the PDF or another browser to print my resume. Unfortunately, Edge only has a patchwork of supported CSS, therefore printing has been disabled for your safety.</span>
+		<br>
+		<span>Please use the PDF or another browser to print my resume. Unfortunately, Edge only has a patchwork of supported CSS, therefore printing has been disabled for your safety.</span>
+	</div>
+
 </body>
+
+<!-- ## JavaScript ## -->
+<!-- Custom -->
+<script src="assets/js/custom.js" async></script>
+
+<!-- IE (Trident) Special Sheet, do at end to avoid slowdowns -->
+<link rel="stylesheet" href="assets/css/resume-ie.css">
 
 </html>
