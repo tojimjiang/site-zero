@@ -17,7 +17,7 @@ html, body {
 
 .resume-pill, .resume-pill-sk {
 	border: 2px solid black;
-	padding: 0.8vh;
+	padding: 0.375vh;
 	border-radius: 50px;
 	margin: 0.2vh;
 	background: white;
@@ -34,14 +34,14 @@ html, body {
 
 .resume-pill-sk {
 	border: 1px solid black;
-	padding: 0.8vh 1vh !important;
+	padding: 0.375vh .75vh !important;
 }
 
 div.resume-pill > p, div.resume-pill-sk > p{
 	margin-block-end: 0;
 	margin-block-start: 0;
 	text-align: center;
-	font-size: 0.8em;
+	font-size: 0.9em;
 	font-weight: 500;
 }
 
@@ -89,7 +89,7 @@ div.resume-pill-sk > p {
 	font-size: 2.7em;
 	font-weight: 700;
 	margin-block-end: 0.08em;
-	margin-block-start: 0.5em;
+	margin-block-start: 0.4em;
 }
 
 .resume-mid-header {
@@ -186,6 +186,9 @@ h3.resume-block-title{
 	white-space: pre-wrap;
 }
 
+.do-not-show {
+	display: none;
+}
 
 @media screen {
 	/* emulate a page */

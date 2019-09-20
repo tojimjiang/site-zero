@@ -1,0 +1,54 @@
+@charset "<Internet Explorer 11 and Microsoft Edge>"; 
+    _:-ms-lang(x), 
+        div.resume-pill > p, 
+        div.resume-pill-sk > p, 
+        .resume-no-linespace, 
+        .resume-mid-header > .resume-mid-header-basic-text, 
+        .resume-mid-sub-header > .resume-mid-sub-header-text, 
+        .resume-block-title, .resume-entry > .resume-entry-detail .resume-no-linespace {
+	        margin-top: 0;
+            margin-bottom: 0;
+    };
+
+    _:-ms-lang(x), 
+        .resume-no-linespace {
+            margin-top: 0 !important;
+            margin-bottom: 0 !important; 
+    }
+
+    _:-ms-lang(x), 
+        .resume-header > h1 {
+            margin-top: 0.4em;
+	        margin-bottom: 0.08em;
+    }
+
+    _:-ms-lang(x), 
+    .resume-mid-header > .resume-mid-header-text {
+        margin-top: 0.16em;
+        margin-bottom: 0.08em;
+    }
+
+    _:-ms-lang(x), 
+    .resume-entry, .resume-entry > p {
+        margin-top: 0em;
+        margin-bottom: 0.33em;
+    }
+
+@supports (-ms-ime-align:auto) {
+    @media print { 
+        .contained {
+            display:none; 
+        }
+
+        .edge-print-warning.do-not-print.do-not-show {
+            color: darkred;
+            display: block !important;
+            font-size: 2em;
+            font-family: "Comic Sans MS", "Roboto", "Arial", sans-serif;
+        }
+
+        .wingdings {
+            font-family:  "Wingdings", "Webdings", "Fixed Sys", "Party Let", "Impact", sans-serif;
+        }
+    } 
+}
