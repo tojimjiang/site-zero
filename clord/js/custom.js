@@ -8,7 +8,7 @@ function dirJS(message) {
 function menuReload() {
 	// Deal with navButton's max width
 	if (document.getElementsByClassName('hidden').length === 0) {
-		console.log(window.getComputedStyle(document.getElementById('navButton')).getPropertyValue('width'))
+		// console.log(window.getComputedStyle(document.getElementById('navButton')).getPropertyValue('width'))
 		document.getElementById('navButton').style.maxWidth = `${window.getComputedStyle(document.getElementById('navButton')).getPropertyValue('width')}`;
 	}
 }
@@ -206,7 +206,7 @@ function secondFactory() {
 
 function stayInSync() {
 	let data = 1001 - new Date().getMilliseconds()
-	console.log(data)
+	// console.log(data)
 	setTimeout(function () {
 		secondFactory();
 		stayInSync();
@@ -215,7 +215,7 @@ function stayInSync() {
 
 function legacyStayInSync() {
 	let data = new Date().getMilliseconds()
-	console.log(data)
+	// console.log(data)
 	if (data > 5) {
 		dirJS("Syncing with your clock. Please wait a moment.")
 		pending();
