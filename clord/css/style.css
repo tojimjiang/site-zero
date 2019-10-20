@@ -1,0 +1,234 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	font-family: "Poppins", "sans-serif";
+	background: black;
+	color: lightgray;
+	overflow: hidden;
+}
+
+.flex-wrap > div {
+	text-align: center;
+}
+
+#titleSpan {
+	text-transform: uppercase;
+	font-size: 3.5rem !important;
+}
+
+span.on {
+	font-size: 3.5rem !important;
+	text-transform: uppercase;
+}
+
+span.off {
+	text-transform: uppercase;
+	font-size: 2.5rem;
+	text-align: center;
+}
+
+div.clock-block > div {
+	display: inline-block;
+}
+
+.fineprint {
+	font-size: 0.5em;
+}
+
+.deactivate {
+	visibility: hidden;
+}
+
+/* Menu CSS */
+#menufix {
+	display: flex;
+	position: relative;
+	z-index: 0;
+	overflow: hidden;
+	justify-content: flex-end;
+}
+
+/* Nav Bar CSS */
+.off {
+	color:#444;
+}
+
+.on {
+	color: white !important;
+}
+
+#navList{
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	border-style: none;
+	display: flex; 
+	justify-content: flex-end;
+	width: 100%;
+	max-height: 100%;
+}
+
+#navRightFlex {
+	display: flex;
+	justify-content: flex-end;
+	max-height: 100%;
+}
+
+.hidden, .hidden a{
+	flex: 0 !important;
+	white-space: nowrap;
+	width: 0;
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+	overflow: hidden;
+}
+
+.text-hidden {
+	white-space: nowrap;
+	overflow: hidden;
+	float: right !important;
+}
+
+/* Align Left Elements */
+a.navLeft {
+	float: left;
+	flex-grow: 1;
+	transition-duration: 0.25s;
+	flex: 1;
+	user-select: none;
+}
+
+a.navLeft, a.navLeft:link, a.navLeft:visited{
+	text-decoration: none;
+	background-color: white;
+	color: black;
+	font-weight: normal;
+	padding: 1vw;
+	max-height: 100%;
+}
+
+a.navLeft:hover, a.navLeft:active, a.navLeft:focus{
+	text-decoration: none;
+	background-color: black;
+	color: beige;
+	font-weight: lighter;
+	padding: 1vw;
+}
+
+/* Align Right Elements */
+a.navRight {
+	float: right;
+	flex-grow: 0;
+	transition-duration: 0.1s;
+	flex:1;
+	max-height: 100%;
+	user-select: none;
+}
+
+a.navRight, a.navRight:link, a.navRight:visited{
+	text-decoration: none;
+	background-color: white;
+	color: black;
+	font-weight: normal;
+	padding: 1vw;
+}
+
+a.navRight:hover, a.navRight:active, a.navRight:focus{
+	text-decoration: none;
+	background-color: black;
+	color: beige;
+	font-weight: lighter;
+	padding: 1vw;
+}
+
+/* Special Page Layout CSS via DIV */
+div.spacer {
+	width:100%;
+	height: 2.5vh;
+	overflow: hidden;
+}
+
+.footer {
+	padding: 1vw;
+	overflow: hidden;
+	border-width: 0px;
+	border-style: solid;
+	text-align: center;
+}
+
+#footerFix {
+	width:100%;
+	overflow: hidden;
+}
+
+.flex-wrap {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	flex-direction: column;
+	padding: 0 5%;
+}
+
+#titleDiv {
+	text-align: center;
+}
+
+.deactivate.sync-pending {
+	display: none;
+}
+
+.sync-pending {
+	display: block !important;
+	position: relative;
+	width: 30vh;
+	height: 30vh;
+	margin: auto;
+  }
+  .sync-pending div {
+	position: absolute;
+	border-radius: 50%;
+	animation: sync-pending 500ms cubic-bezier(0, 0.2, 0.8, 1) infinite;
+  }
+  .sync-pending div:nth-child(1) {
+	animation-delay: -375ms;
+	border-top: .9375vh double #fff;
+  }
+  .sync-pending div:nth-child(2) {
+	animation-delay: -250ms;
+	border-right: .9375vh double #fff;
+  }
+  .sync-pending div:nth-child(3) {
+	animation-delay: -125ms;
+	border-bottom: .9375vh double #fff;
+  }
+  .sync-pending div:nth-child(4) {
+	animation-delay: 0ms;
+	border-left: .9375vh double #fff;
+  }
+  @keyframes sync-pending {
+	0% {
+	  top: 13.125vh;
+	  left: 13.125vh;
+	  width: 0;
+	  height: 0;
+	  opacity: 0;
+	}
+	100% {
+	  top: -1px;
+	  left: -1px;
+	  width: 27.1875vh;
+	  height: 27.1875vh;
+	  opacity: 0.66;
+	}
+  }
+
+/* Generic Link Styling */
+a:link, a:visited{
+	text-decoration: none;
+	color: #fff;
+}
+
+a:hover, a:active, a:focus{
+	text-decoration: none;
+	color: #fff;
+}

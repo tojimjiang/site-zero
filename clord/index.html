@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Jim Jiang - Clord</title>
+
+	<!-- Load Dependencies (CSS, Scripts and Fonts) -->
+
+	<!-- Google Font -->
+	<link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+
+	<!-- CSS Style Sheet -->
+	<link rel="stylesheet" href="css/style.css">
+	<!-- Prevent smartphones from scaling pages down -->
+	<meta name="viewport" content="initial-scale=1">
+
+	<!-- JavaScript -->
+	<script src="js/custom.js"></script>
+
+	<!-- Char Set (for Emoji) -->
+	<meta charset="UTF-8">
+</head>
+
+<body>
+
+	<!-- List Style Navigation -->
+	<header>
+		<nav>
+			<div id="navList">
+				<a class="navLeft hideable" href="index.html">Clord (a word clock) <span class="fineprint">by Jim
+						Jiang</span></a>
+				<div id="navRightFlex">
+					<a class="navRight hideable" href="https://url.jimjiang.com/jimjiang-home.html">jimjiang.com</a>
+					<a id="navButton" class="navRight" onclick="menuChange()
+					">👉</a>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+	<!-- Menu Fix for a Fixed Nav -->
+	<!-- On load, grab the height of the menu(s), and apply a margin to menufix element -->
+
+
+	<div class="flex-wrap">
+		<div class="clock-block">
+			<div id="titleDiv">
+				<h1 id="title"><span id="titleSpan">JavaScript is disabled 😞. Please enable JavaScript so this site
+						will work.</span></h1>
+			</div>
+			<div class="sync-pending"><div></div><div></div><div></div><div></div></div>
+			<span class="minutes off deactivate" id="m30">half</span>
+			<span class="minutes off deactivate" id="m15">quarter</span>
+			<span class="minutes off deactivate" id="m20">twenty</span>
+			<span class="minutes off deactivate" id="m1">one</span>
+			<span class="minutes off deactivate" id="m2">two</span>
+			<span class="minutes off deactivate" id="m3">three</span>
+			<span class="minutes off deactivate" id="mx3">thir</span>
+			<span class="minutes off deactivate" id="m4">four</span>
+			<span class="minutes off deactivate" id="m5">five</span>
+			<span class="minutes off deactivate" id="m6">six</span>
+			<span class="minutes off deactivate" id="m7">seven</span>
+			<span class="minutes off deactivate" id="m8">eight</span>
+			<span class="minutes off deactivate" id="m9">nine</span>
+			<span class="minutes off deactivate" id="m1x">teen</span>
+			<span class="minutes off deactivate" id="m10">ten</span>
+			<span class="minutes off deactivate" id="m11">eleven</span>
+			<span class="minutes off deactivate" id="m12">twelve</span>
+
+			<span class="roll off deactivate" id="to">to</span>
+			<span class="roll off deactivate" id="past">past</span>
+
+			<span class="hours off deactivate" id="h1">one</span>
+			<span class="hours off deactivate" id="h2">two</span>
+			<span class="hours off deactivate" id="h3">three</span>
+			<span class="hours off deactivate" id="h4">four</span>
+			<span class="hours off deactivate" id="h5">five</span>
+			<span class="hours off deactivate" id="h6">six</span>
+			<span class="hours off deactivate" id="h7">seven</span>
+			<span class="hours off deactivate" id="h8">eight</span>
+			<span class="hours off deactivate" id="h9">nine</span>
+			<span class="hours off deactivate" id="h10">ten</span>
+			<span class="hours off deactivate" id="h11">eleven</span>
+			<span class="hours off deactivate" id="h12">twelve</span>
+
+			<span class="roll off deactivate" id="oclock">o'clock</span>
+
+			<span class="on deactivate"> in the </span>
+
+			<span class="time off deactivate" id="early">early </span>
+			<span class="time off deactivate" id="late">late</span>
+			<span class="time off deactivate" id="twilight">twilight</span>
+			<span class="time off deactivate" id="morning">morning</span>
+			<span class="time off deactivate" id="midday">midday</span>
+			<span class="time off deactivate" id="afternoon">afternoon</span>
+			<span class="time off deactivate" id="evening">evening </span>
+			<span class="time off deactivate" id="midnight">midnight</span>
+
+			<span class="seconds off deactivate" id="s50">fifty</span>
+			<span class="seconds off deactivate" id="s40">forty</span>
+			<span class="seconds off deactivate" id="s30">thirty</span>
+			<span class="seconds off deactivate" id="s20">twenty</span>
+			<span class="seconds off deactivate" id="s0">zero</span>
+			<span class="seconds off deactivate" id="s1">one</span>
+			<span class="seconds off deactivate" id="s2">two</span>
+			<span class="seconds off deactivate" id="s3">three</span>
+			<span class="seconds off deactivate" id="sx3">thir</span>
+			<span class="seconds off deactivate" id="s4">four</span>
+			<span class="seconds off deactivate" id="s5">five</span>
+			<span class="seconds off deactivate" id="sx5">fif</span>
+			<span class="seconds off deactivate" id="s6">six</span>
+			<span class="seconds off deactivate" id="s7">seven</span>
+			<span class="seconds off deactivate" id="s8">eight</span>
+			<span class="seconds off deactivate" id="s9">nine</span>
+			<span class="seconds off deactivate" id="s1x">teen</span>
+			<span class="seconds off deactivate" id="s10">ten</span>
+			<span class="seconds off deactivate" id="s11">eleven</span>
+			<span class="seconds off deactivate" id="s12">twelve</span>
+
+		</div>
+	</div>
+
+	<!-- Make footer -->
+	<div id="footerFix">
+	</div>
+	<div class="spacer">
+	</div>
+	<div class="footer">
+		<p class="mobi-lr-pad">⌚ Clord 🧾 - <a href = "../index.html">© 2019 Jim Jiang</a> </p>
+	</div>
+
+</body>
+
+</html>
