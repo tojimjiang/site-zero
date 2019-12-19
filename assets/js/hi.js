@@ -1,3 +1,20 @@
+function jsLoad() {
+	document.getElementById('title-header').innerText = `Making sure your not a robot. 🤖 Beep boop. 💻`;
+	document.getElementById('preload-desc').innerText = `But really, reCAPTCHA is making sure your not a robot before letting you through. Should be just a moment (less than 20 seconds).`;
+	document.getElementById('loader-animation').style.display = 'block';
+}
+
+function displaySwap() {
+	// Update Title
+	document.getElementById('title-header').innerText = `It's Happening!`;
+	// Hide Loader
+	document.getElementById('preload').style.display = 'none';
+	// Show Actual Contact Info
+	document.getElementById('info-div').style.display = 'flex';
+	// Update Title
+	document.getElementById('title-header').innerText = `📱 Let's Talk! 💻`;
+}
+
 function load(object) {
 	// Phone
 	let phone = document.createElement('a');
@@ -13,6 +30,8 @@ function load(object) {
 	email.classList = 'project';
 	email.href=`mailto:${object.email}`;
 	document.getElementById('info-div').appendChild(email);
+	// Show to user
+	displaySwap();
 }
 
 function insertCaptcha(div){
@@ -73,6 +92,8 @@ async function verify3() {
 }
 
 window.addEventListener('load', function () {
+	// JS Page loading
+	jsLoad();
 	// v3 Captcha (on load)
 	verify3();
 });

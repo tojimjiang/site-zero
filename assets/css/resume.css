@@ -180,10 +180,14 @@ h3.resume-block-title{
 	vertical-align: baseline;
 }
 
-.resume-entry > .resume-entry-detail .resume-no-linespace {
+.resume-entry > .resume-entry-detail {
+	text-indent: -1em;
+	padding-left: 1em;
+}
+
+.resume-entry > .resume-entry-detail.resume-no-linespace {
 	margin-block-end: 0em;
 	margin-block-start: 0em;
-	white-space: pre-wrap;
 }
 
 .do-not-show {
