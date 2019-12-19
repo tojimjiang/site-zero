@@ -24,6 +24,8 @@
 	<!-- Print and Speak Beautifully -->
 	<link rel="stylesheet" media="print" href="assets/css/desktop.css">
 	<link rel="stylesheet" media="speech" href="assets/css/desktop.css">
+	<!-- Special Loading CSS -->
+	<link rel="stylesheet" href="assets/css/hi.css">
 	<!-- Prevent smartphones from scaling pages down -->
 	<meta name="viewport" content="initial-scale=1">
 
@@ -36,7 +38,7 @@
 	<!-- ## JavaScript ## -->
 	<!-- Custom -->
 	<script src="assets/js/custom.js"></script>
-	<script src="assets/js/hi.js"></script>
+	<script src="assets/js/hi.js" charset="utf-8"></script>
 
 	<!-- ## FONTS (from Google) ## -->
 	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
@@ -72,18 +74,35 @@
 
 	<!-- Actual Content 1 -->
 	<div class="contained">
-		<div class="content allcenterer" style="flex-direction: column">
-			<h1>Let's Talk.</h1>
-			<!-- Check for Authority -->
+		<div class="content allcenterer column-flex" >
+			<h1 id="title-header">This page relies on JavaScript to work properly!</h1>
 			<div>
-				<!-- Captcha Auth Happens on the Server -->
+				<!-- Preload content (once loaded this will disappear). -->
+				<div id="preload"  class="content containedFlex">
+					<p>Does not compute. Does not compute. My buffer is overflowing. My hard drive is scrambling. My fan is overheating.</p>
+					<span class=subtext><p id="preload-desc">But really, JavaScript must be enabled for this page to fully load. Without it this page can not determine your user status.</p></span>
+					<div id="loader-animation" class="sync-pending">
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+					</div>
+				</div>
+
 				<div class="allcenterer">
 					<div id="captcha-wrap" class="captcha">
 					</div>
 				</div>
+			</div>
+
+			<!-- Check for Authority -->
+			<div>
+				<!-- Captcha Auth Happens on the Server -->
+
 				<div id="info-div" class="content containedFlex">
 					<a target="_blank" class="project" href="https://github.com/tojimjiang">See My GitHub</a>
-					<a target="_blank" class="project" href="https://www.linkedin.com/in/jim-jiang/">See My Linked In</a>
+					<a target="_blank" class="project" href="https://www.linkedin.com/in/jim-jiang/">See My Linked
+						In</a>
 				</div>
 			</div>
 
