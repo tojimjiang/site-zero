@@ -1,7 +1,7 @@
 function jsLoad() {
 	document.getElementById('title-header').innerText = `Making sure your not a robot. 🤖 Beep boop. 💻`;
 	document.getElementById('preload-desc').innerText = `But really, reCAPTCHA is making sure your not a robot before letting you through. Should be just a moment (less than 20 seconds).`;
-	document.getElementById('loader-animation').style.display = 'block';
+	document.getElementById('loader-animation').style.visibility = 'visible';
 }
 
 function displaySwap() {
@@ -10,7 +10,7 @@ function displaySwap() {
 	// Hide Loader
 	document.getElementById('preload').style.display = 'none';
 	// Show Actual Contact Info
-	document.getElementById('info-div').style.display = 'flex';
+	document.getElementById('info-div').style.visibility = 'visible';
 	// Update Title
 	document.getElementById('title-header').innerText = `📱 Let's Talk! 💻`;
 }
