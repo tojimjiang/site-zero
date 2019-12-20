@@ -1,5 +1,10 @@
 #info-div, #loader-animation {
-	display: none;
+	visibility: hidden;
+}
+
+#preload.containedFlex {
+	flex-direction: column;
+  	align-items: center;
 }
 
 .column-flex {
@@ -7,7 +12,6 @@
 }
 
 .sync-pending {
-		display: inline-block;
 		position: relative;
 		width: 30vw;
 		height: 30vw;
@@ -19,22 +23,22 @@
 		margin-bottom: -9vw;
 	  }
 	  .sync-pending div:nth-child(1) {
-		animation: sync-pending1 0.5s infinite;
+		animation: sync-pending1 500ms infinite cubic-bezier(.66,.48,.51,-0.77);
 	  }
 	  .sync-pending div:nth-child(2) {
-		animation: sync-pending2 0.5s infinite;
+		animation: sync-pending2 500ms infinite cubic-bezier(.66,.48,.51,-0.77);
 	  }
 	  .sync-pending div:nth-child(3) {
-		animation: sync-pending3 0.5s infinite;
+		animation: sync-pending3 500ms infinite cubic-bezier(.66,.48,.51,-0.77);
 	  }
 	  .sync-pending div:nth-child(4) {
-		animation: sync-pending4 0.5s infinite;
+		animation: sync-pending4 500ms infinite cubic-bezier(.66,.48,.51,-0.77);
 	  }
 
 	  @keyframes sync-pending1 {
 		0% {
 			transform: translate(10vw, 0vw);
-			background: #000;
+			background: #ccc;
 		  }
 		  100% {
 			transform: translate(20vw, 10vw);
@@ -48,14 +52,14 @@
 		}
 		100% {
 		  transform: translate(10vw, 20vw);
-		  background: #ccc;
+		  background: #000;
 		}
 
 	  }
 	  @keyframes sync-pending3 {
 		0% {
 		  transform: translate(10vw, 20vw);
-		  background: #ccc;
+		  background: #000;
 		}
 		100% {
 		  transform: translate(0vw, 10vw);
@@ -69,7 +73,7 @@
 		}
 		100% {
 		  transform: translate(10vw, 0vw);
-		  background: #000;
+		  background: #ccc;
 		}
 	  }
   }
