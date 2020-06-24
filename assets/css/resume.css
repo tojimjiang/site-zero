@@ -207,6 +207,12 @@ h3.resume-block-title{
 }
 
 @media print {
+
+	@page {
+		size: auto;
+		margin: 0mm;
+	  }
+
 	nav {
 		display: none;
 	}
@@ -222,7 +228,6 @@ h3.resume-block-title{
 	div.resume-page{
 		width: 100% !important;
 		max-width: none !important;
-		
 	}
 
 	html {

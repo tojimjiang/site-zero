@@ -29,6 +29,8 @@
 	<!-- Custom -->
 	<script src="assets/js/custom.js"></script>
 
+	<!-- PrintJS-->
+	<script src="https://printjs-4de6.kxcdn.com/print.min.js"></script>
 	<meta charset="UTF-8">
 </head>
 
@@ -51,7 +53,8 @@
 						}
 					else {
 						window.alert('Please use a different browser to print this page. Edge does not support correct styling.')
-					}">Print</a>
+					}">Print HTML</a>
+					<a class="navRight" onclick="printJS('assets/files/resume.pdf')">Print PDF (450 KB)</a>
 				</div>
 		</nav>
 	</header>
@@ -60,7 +63,6 @@
 	<!-- On load, grab the height of the menu(s), and apply a margin to menufix element -->
 	<div id="menufix" class="do-not-print">
 	</div>
-
 
 	<!-- Actual Content 1 -->
 	<div class="contained">
@@ -123,9 +125,6 @@
 							<p>HTML</p>
 						</div>
 						<div class='resume-pill-sk'>
-							<p>Java</p>
-						</div>
-						<div class='resume-pill-sk'>
 							<p>JavaScript</p>
 						</div>
 						<div class='resume-pill-sk'>
@@ -158,9 +157,6 @@
 							<p>Open Source Software</p>
 						</div>
 						<div class='resume-pill-sk'>
-							<p>PHP</p>
-						</div>
-						<div class='resume-pill-sk'>
 							<p>Progressive Web Apps</p>
 						</div>
 						<div class='resume-pill-sk'>
@@ -187,7 +183,7 @@
 							<p>C</p>
 						</div>
 						<div class='resume-pill-sk'>
-							<p>Cloud Computing</p>
+							<p>Java</p>
 						</div>
 						<div class='resume-pill-sk'>
 							<p>Linux</p>
@@ -203,6 +199,9 @@
 						</div>
 						<div class='resume-pill-sk'>
 							<p>Parallel Computing</p>
+						</div>
+						<div class='resume-pill-sk'>
+							<p>PHP</p>
 						</div>
 						<div class='resume-pill-sk'>
 							<p>React</p>
@@ -268,7 +267,7 @@
 				<div class="resume-left-right-margin resume-mid-header">
 					<h2 class="resume-mid-header-text">Reach Me</h2>
 					<p class="resume-mid-header-basic-text">Get all the info you need at <a
-							href="https://jimjiang.com/hi?ref=r-v201912">jimjiang.com/hi</a></p>
+							href="https://jimjiang.com/hi?ref=resume2020-06">jimjiang.com/hi</a></p>
 				</div>
 			</div>
 		</div>
