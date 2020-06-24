@@ -185,3 +185,7 @@ a.project:hover, a.project:active, a.project:focus{
 	font-size: 0.75em;
 	display: block;
 }
+
+.mobileHidden {
+	display: none;
+}
