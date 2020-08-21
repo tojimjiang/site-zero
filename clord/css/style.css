@@ -13,19 +13,28 @@ html, body {
 
 #titleSpan {
 	text-transform: uppercase;
-	font-size: 3.5rem !important;
+	font-size: 3.0rem !important;
 }
 
 span.on {
-	font-size: 3.5rem !important;
+	font-size: 3.0rem !important;
 	text-transform: uppercase;
 }
 
 span.off {
 	text-transform: uppercase;
-	font-size: 2.5rem;
+	font-size: 3.0rem;
 	text-align: center;
 }
+
+span.seconds.on, span.seconds-like{
+	font-size: 2.0rem !important;
+}
+
+span.seconds.off {
+	font-size: 2.0rem;
+}
+
 
 div.clock-block > div {
 	display: inline-block;
