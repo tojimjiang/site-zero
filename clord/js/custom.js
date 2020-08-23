@@ -109,8 +109,33 @@ function minute30factory(minute) {
 	}
 }
 
+function timeBuddyFactory(enabled) {
+	if (enabled) {
+		document.querySelector(`#time-buddy`).classList.remove('off');
+		if (!document.querySelector(`#time-buddy`).classList.contains('on') ) {
+			document.querySelector(`#time-buddy`).classList.add('on');
+			
+		}
+	}
+	if (!enabled) {
+		document.querySelector(`#time-buddy`).classList.remove('on');
+		if (!document.querySelector(`#time-buddy`).classList.contains('off') ) {
+			document.querySelector(`#time-buddy`).classList.add('off');
+		}
+	}
+	
+}
+
 function timeFactory(hour, minute) {
-	let target = (timeHM[hour[minute]] ? timeHM[hour[minute]] : timeH[hour]).split(" ");
+	let target = [];
+	if (timeHM[hour] && timeHM[hour][minute]) {
+		target = (timeHM[hour][minute]).split(" ");
+		timeBuddyFactory(false)
+	}
+	else {
+		target = (timeH[hour]).split(" ");
+		timeBuddyFactory(true)
+	}
 	let on = document.querySelectorAll('.time.on');
 	for (let i = 0; i < on.length; i++) {
 		if (!target.includes(on[i].textContent)) {
@@ -129,7 +154,7 @@ function hourFactory(hour) {
 	if (hour == 0) {
 		target = '12'
 	}
-	else if (hour < 12) {
+	else if (hour <= 12) {
 		target = `${hour}`
 	}
 	else {
@@ -285,13 +310,14 @@ window.onload = function () {
 let interval = null;
 
 let timeHM = {
-	"0": {
-		"0": "midnight"
+	0: {
+		0: "midnight"
 	},
-	"12": {
-		"0": "noon"
+	12: {
+		0: "midday"
 	}
 }
+
 let timeH = {
 	"0": "early twilight",
 	"1": "early twilight",
